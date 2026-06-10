@@ -17,6 +17,7 @@ import Members from './slides/08-Members';
 import SpecialDates from './slides/09-SpecialDates';
 import Groups from './slides/10-Groups';
 import Committee from './slides/10b-Committee';
+import VoterList from './slides/10c-VoterList';
 import MemberReports from './slides/11-MemberReports';
 import FinanceHeader from './slides/12-FinanceHeader';
 import Transactions from './slides/13-Transactions';
@@ -33,9 +34,18 @@ import RecordsHeader from './slides/21-RecordsHeader';
 import Records from './slides/22-Records';
 import Masters from './slides/23-Masters';
 import AssetManagement from './slides/23b-AssetManagement';
+import Property from './slides/23c-Property';
 import Security from './slides/24-Security';
 import Settings from './slides/25-Settings';
+import Pulse from './slides/25b-Pulse';
 import MobileApp from './slides/26-MobileApp';
+import DioceseHeader from './slides/26b-DioceseHeader';
+import DioceseVision from './slides/26c-DioceseVision';
+import Assessment from './slides/26d-Assessment';
+import DioceseProperty from './slides/26e-DioceseProperty';
+import StaffManagement from './slides/26f-StaffManagement';
+import ChildrenMinistry from './slides/26g-ChildrenMinistry';
+import DioceseClose from './slides/26h-DioceseClose';
 import PricingHeader from './slides/27a-PricingHeader';
 import PricingStory from './slides/27b-PricingStory';
 import Pricing from './slides/27-Pricing';
@@ -54,6 +64,7 @@ const slides = [
   { component: SpecialDates, title: 'Special Dates' },
   { component: Groups, title: 'Groups' },
   { component: Committee, title: 'Committee' },
+  { component: VoterList, title: 'Voter List' },
   { component: MemberReports, title: 'Member Reports' },
   { component: FinanceHeader, title: 'Finance' },
   { component: Transactions, title: 'Transactions' },
@@ -70,13 +81,22 @@ const slides = [
   { component: Records, title: 'Records Detail' },
   { component: Masters, title: 'Masters' },
   { component: AssetManagement, title: 'Asset Management' },
+  { component: Property, title: 'Property & Rent' },
   { component: Security, title: 'Security' },
   { component: Settings, title: 'Settings' },
+  { component: Pulse, title: 'Pulse' },
   { component: MobileApp, title: 'Mobile App' },
   { component: Setup, title: 'Setup' },
   { component: PricingHeader, title: 'Pricing' },
   { component: PricingStory, title: 'Pricing Story' },
   { component: Pricing, title: 'Pricing Details' },
+  { component: DioceseHeader, title: 'Diocese' },
+  { component: DioceseVision, title: 'Diocese Vision' },
+  { component: Assessment, title: 'Assessment' },
+  { component: DioceseProperty, title: 'Diocese Property' },
+  { component: StaffManagement, title: 'Staff & HR' },
+  { component: ChildrenMinistry, title: "Children's Ministry" },
+  { component: DioceseClose, title: 'Diocese CTA' },
   { component: Closing, title: 'Closing' },
 ];
 
