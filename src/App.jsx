@@ -35,7 +35,11 @@ import Records from './slides/22-Records';
 import Masters from './slides/23-Masters';
 import AssetManagement from './slides/23b-AssetManagement';
 import Property from './slides/23c-Property';
-import Security from './slides/24-Security';
+import SecurityHero from './slides/24a-SecurityHero';
+import WhyCloud from './slides/24c-WhyCloud';
+import SecurityArchitecture from './slides/24b-SecurityArchitecture';
+import DiocesePricing from './slides/24d-DiocesePricing';
+import DiocesePricingOption2 from './slides/24e-DiocesePricingOption2';
 import Settings from './slides/25-Settings';
 import Pulse from './slides/25b-Pulse';
 import MobileApp from './slides/26-MobileApp';
@@ -44,7 +48,12 @@ import DioceseVision from './slides/26c-DioceseVision';
 import Assessment from './slides/26d-Assessment';
 import DioceseProperty from './slides/26e-DioceseProperty';
 import StaffManagement from './slides/26f-StaffManagement';
-import ChildrenMinistry from './slides/26g-ChildrenMinistry';
+import DioceseMembers from './slides/26i-DioceseMembers';
+import DioceseFinance from './slides/26j-DioceseFinance';
+import DioceseTalent from './slides/26k-DioceseTalent';
+import DioceseLegal from './slides/26l-DioceseLegal';
+import OnboardingDiocese from './slides/30-OnboardingDiocese';
+import OnboardingChurch from './slides/31-OnboardingChurch';
 import DioceseClose from './slides/26h-DioceseClose';
 import PricingHeader from './slides/27a-PricingHeader';
 import PricingStory from './slides/27b-PricingStory';
@@ -82,7 +91,6 @@ const slides = [
   { component: Masters, title: 'Masters' },
   { component: AssetManagement, title: 'Asset Management' },
   { component: Property, title: 'Property & Rent' },
-  { component: Security, title: 'Security' },
   { component: Settings, title: 'Settings' },
   { component: Pulse, title: 'Pulse' },
   { component: MobileApp, title: 'Mobile App' },
@@ -92,10 +100,20 @@ const slides = [
   { component: Pricing, title: 'Pricing Details' },
   { component: DioceseHeader, title: 'Diocese' },
   { component: DioceseVision, title: 'Diocese Vision' },
+  { component: DioceseMembers, title: 'Diocese Members' },
   { component: Assessment, title: 'Assessment' },
+  { component: DioceseFinance, title: 'Diocese Finance' },
+  { component: StaffManagement, title: 'Workforce' },
+  { component: DioceseTalent, title: 'Talent Acquisition' },
+  { component: DioceseLegal, title: 'Legal' },
   { component: DioceseProperty, title: 'Diocese Property' },
-  { component: StaffManagement, title: 'Staff & HR' },
-  { component: ChildrenMinistry, title: "Children's Ministry" },
+  { component: OnboardingDiocese, title: 'Onboarding — Diocese' },
+  { component: OnboardingChurch, title: 'Onboarding — Church' },
+  { component: SecurityHero, title: 'Security' },
+  { component: WhyCloud, title: 'Cloud vs On-Premise' },
+  { component: SecurityArchitecture, title: 'Architecture' },
+  { component: DiocesePricing, title: 'Pricing — Option 1' },
+  { component: DiocesePricingOption2, title: 'Pricing — Option 2' },
   { component: DioceseClose, title: 'Diocese CTA' },
   { component: Closing, title: 'Closing' },
 ];

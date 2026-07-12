@@ -1,14 +1,21 @@
 import { motion } from 'framer-motion';
 import { HugeiconsIcon } from '@hugeicons/react';
-import { LockIcon, Audit01Icon, UserShield01Icon, Shield01Icon } from '@hugeicons-pro/core-stroke-rounded';
+import {
+  Shield01Icon, Key01Icon, SquareLock02Icon, CloudServerIcon, CloudUploadIcon,
+  UserShield01Icon, Audit01Icon, Download01Icon, LocationUser04Icon,
+} from '@hugeicons-pro/core-stroke-rounded';
 import { FadeUpText, StaggerContainer, StaggerItem } from '../components/AnimatedText';
-import GlassCard from '../components/GlassCard';
 
-const activityLog = [
-  { user: 'John', action: 'updated member #1042', time: '2:30 PM' },
-  { user: 'Mary', action: 'created receipt R-2026-0089', time: '2:15 PM' },
-  { user: 'Admin', action: 'changed ledger settings', time: '1:45 PM' },
-  { user: 'Sarah', action: 'exported member report', time: '1:20 PM' },
+const cards = [
+  { icon: Shield01Icon, title: 'One church can\'t see another', desc: 'Each church\'s data is invisible to every other church.' },
+  { icon: Key01Icon, title: 'Login by OTP, not passwords', desc: 'Nothing to share, nothing to steal, nothing to forget.' },
+  { icon: SquareLock02Icon, title: 'No access, no entry', desc: 'People are given exactly the access they need, and nothing more.' },
+  { icon: CloudServerIcon, title: 'Locked private network', desc: 'The database sits in a sealed room, reachable only through a secure tunnel.' },
+  { icon: CloudUploadIcon, title: 'Daily backups · 30-day recall', desc: 'A fresh copy every day, recoverable for a full month.' },
+  { icon: UserShield01Icon, title: 'You own your data', desc: 'Church and diocese admins keep full control of their own records.' },
+  { icon: Audit01Icon, title: 'Every action recorded', desc: 'Every login and change is logged, and the log can\'t be secretly altered.' },
+  { icon: Download01Icon, title: 'Downloads are tracked', desc: 'We log who exported what, and from which device.' },
+  { icon: LocationUser04Icon, title: 'Login-location alerts', desc: 'The login IP is recorded; sign-ins from unusual places raise a warning.' },
 ];
 
 export default function Security() {
@@ -16,104 +23,67 @@ export default function Security() {
     <div className="slide-center">
       <FadeUpText delay={0.1}>
         <h2 style={{ marginBottom: 8 }}>
-          Security & <span className="gradient-text">Transparency</span>
+          Your Data: <span className="gradient-text">Locked Down, Always Watched</span>
         </h2>
       </FadeUpText>
       <FadeUpText delay={0.2}>
-        <p style={{ marginBottom: 44, color: 'var(--text-muted)', maxWidth: 500 }}>
-          Complete accountability for every action in the system
+        <p style={{ marginBottom: 30, color: 'var(--text-muted)', maxWidth: 620 }}>
+          Enterprise-grade security, in plain language. Nine promises about how your information is kept safe.
         </p>
       </FadeUpText>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: 36, maxWidth: 950, width: '100%' }}>
-        {/* Left: 3 feature cards stacked */}
-        <StaggerContainer delay={0.3} staggerDelay={0.12} className="flex-col gap-md">
-          {[
-            { icon: LockIcon, title: 'Role-Based Access', desc: 'Control who can view, edit, or manage each module' },
-            { icon: UserShield01Icon, title: 'Permission Levels', desc: 'Admin, ReadOnly, and module-specific roles per user' },
-            { icon: Shield01Icon, title: 'Church-Level Isolation', desc: 'All data scoped by church — complete multi-tenant security' },
-          ].map((f) => (
-            <StaggerItem key={f.title}>
-              <div style={{
-                display: 'flex', alignItems: 'center', gap: 16,
-                padding: '18px 22px', background: 'rgba(255,255,255,0.8)',
-                backdropFilter: 'blur(20px)', border: '1px solid var(--line)',
-                borderRadius: 'var(--radius)',
-              }}>
-                <div style={{
-                  width: 44, height: 44, borderRadius: 12, flexShrink: 0,
-                  background: 'var(--primary-bg)', display: 'flex',
-                  alignItems: 'center', justifyContent: 'center',
-                }}>
-                  <HugeiconsIcon icon={f.icon} size={22} color="#7367F0" />
-                </div>
-                <div style={{ textAlign: 'left' }}>
-                  <h3 style={{ fontSize: '0.95rem', margin: 0, marginBottom: 4 }}>{f.title}</h3>
-                  <p style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.5 }}>{f.desc}</p>
-                </div>
-              </div>
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
-
-        {/* Right: Live activity log mockup */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-        >
-          <GlassCard style={{ padding: 0, overflow: 'hidden' }}>
-            {/* Header */}
+      <StaggerContainer
+        delay={0.3}
+        staggerDelay={0.07}
+        style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, maxWidth: 1000, width: '100%' }}
+      >
+        {cards.map((c) => (
+          <StaggerItem key={c.title}>
             <div style={{
-              background: 'var(--gradient-primary)', padding: '14px 22px',
-              display: 'flex', alignItems: 'center', gap: 10, color: 'white',
+              display: 'flex', alignItems: 'flex-start', gap: 13, height: '100%',
+              padding: '16px 18px', background: 'rgba(255,255,255,0.82)', backdropFilter: 'blur(20px)',
+              border: '1px solid var(--line)', borderRadius: 'var(--radius)', textAlign: 'left',
             }}>
-              <HugeiconsIcon icon={Audit01Icon} size={20} color="white" />
-              <span style={{ fontWeight: 700, fontSize: '0.9rem' }}>Live Activity Log</span>
               <div style={{
-                marginLeft: 'auto', width: 8, height: 8, borderRadius: '50%',
-                background: '#28C76F', boxShadow: '0 0 6px #28C76F',
-              }} />
+                width: 40, height: 40, borderRadius: 11, flexShrink: 0,
+                background: 'var(--primary-bg)', display: 'flex', alignItems: 'center', justifyContent: 'center',
+              }}>
+                <HugeiconsIcon icon={c.icon} size={21} color="#7367F0" strokeWidth={1.7} />
+              </div>
+              <div>
+                <h3 style={{ fontSize: '0.86rem', margin: 0, marginBottom: 3, lineHeight: 1.3 }}>{c.title}</h3>
+                <p style={{ fontSize: '0.74rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.45 }}>{c.desc}</p>
+              </div>
             </div>
-            {/* Log entries */}
-            <div style={{ padding: '8px 0' }}>
-              {activityLog.map((entry, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.8 + i * 0.2, duration: 0.4 }}
-                  style={{
-                    display: 'flex', alignItems: 'center', gap: 5,
-                    padding: '12px 16px',
-                    borderBottom: i < activityLog.length - 1 ? '1px solid var(--line)' : 'none',
-                  }}
-                >
-                  {/* Avatar */}
-                  <div style={{
-                    width: 32, height: 32, borderRadius: '50%',
-                    background: 'var(--primary-bg)', display: 'flex',
-                    alignItems: 'center', justifyContent: 'center',
-                    fontSize: '0.7rem', fontWeight: 700, color: 'var(--primary)',
-                    flexShrink: 0,
-                  }}>
-                    {entry.user[0]}
-                  </div>
-                  <div style={{ flex: 1, textAlign: 'left' }}>
-                    <span style={{ fontSize: '0.82rem' }}>
-                      <strong style={{ color: 'var(--primary)' }}>{entry.user}</strong>{' '}
-                      <span style={{ color: 'var(--text-secondary)' }}>{entry.action}</span>
-                    </span>
-                  </div>
-                  <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', flexShrink: 0 }}>
-                    {entry.time}
-                  </span>
-                </motion.div>
-              ))}
-            </div>
-          </GlassCard>
-        </motion.div>
-      </div>
+          </StaggerItem>
+        ))}
+      </StaggerContainer>
+
+      {/* Footer strip — extra assurances */}
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.1, duration: 0.6 }}
+        style={{
+          marginTop: 24, display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 10,
+          maxWidth: 1000,
+        }}
+      >
+        {[
+          'Encrypted in transit & at rest',
+          'Auto logout when idle',
+          'Lockout on repeated wrong OTP',
+          'Nothing is ever truly deleted',
+          'We never sell your data',
+        ].map((t) => (
+          <span key={t} style={{
+            fontSize: '0.74rem', fontWeight: 600, color: 'var(--primary)',
+            padding: '7px 14px', background: 'var(--primary-bg)', borderRadius: 100,
+          }}>
+            🔒 {t}
+          </span>
+        ))}
+      </motion.div>
     </div>
   );
 }

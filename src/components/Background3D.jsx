@@ -2,11 +2,34 @@ import { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
+// Round sprite so points render as circles, not the default square quads
+function makeCircleTexture() {
+  const size = 64;
+  const canvas = document.createElement('canvas');
+  canvas.width = canvas.height = size;
+  const ctx = canvas.getContext('2d');
+  const g = ctx.createRadialGradient(size / 2, size / 2, 0, size / 2, size / 2, size / 2);
+  g.addColorStop(0, 'rgba(255,255,255,1)');
+  g.addColorStop(0.55, 'rgba(255,255,255,1)');
+  g.addColorStop(1, 'rgba(255,255,255,0)');
+  ctx.fillStyle = g;
+  ctx.beginPath();
+  ctx.arc(size / 2, size / 2, size / 2, 0, Math.PI * 2);
+  ctx.fill();
+  const tex = new THREE.CanvasTexture(canvas);
+  tex.needsUpdate = true;
+  return tex;
+}
+
 function ParticleField() {
   const mesh = useRef();
   const count = 600;
 
-  const [positions, colors] = useMemo(() => {
+  const circleTexture = useMemo(() => makeCircleTexture(), []);
+
+  // `base` keeps the original layout; the live `positions` array only ever
+  // oscillates *around* it, so nothing accumulates / drifts / speeds up.
+  const [positions, colors, base] = useMemo(() => {
     const pos = new Float32Array(count * 3);
     const col = new Float32Array(count * 3);
     const purple = new THREE.Color('#7367F0');
@@ -26,19 +49,20 @@ function ParticleField() {
       col[i * 3 + 1] = color.g;
       col[i * 3 + 2] = color.b;
     }
-    return [pos, col];
+    return [pos, col, pos.slice()];
   }, []);
 
   useFrame((state) => {
-    const time = state.clock.elapsedTime * 0.12;
+    const t = state.clock.elapsedTime * 0.2; // slow, steady
     const posArray = mesh.current.geometry.attributes.position.array;
+    const AMP = 0.18; // bounded drift — gentle bob in place
     for (let i = 0; i < count; i++) {
       const i3 = i * 3;
-      posArray[i3 + 1] += Math.sin(time + i * 0.1) * 0.0015;
-      posArray[i3] += Math.cos(time + i * 0.05) * 0.0008;
+      posArray[i3] = base[i3] + Math.cos(t + i * 0.4) * AMP;
+      posArray[i3 + 1] = base[i3 + 1] + Math.sin(t + i * 0.6) * AMP;
     }
     mesh.current.geometry.attributes.position.needsUpdate = true;
-    mesh.current.rotation.y = time * 0.03;
+    mesh.current.rotation.y = state.clock.elapsedTime * 0.015; // constant slow spin
   });
 
   return (
@@ -49,6 +73,8 @@ function ParticleField() {
       </bufferGeometry>
       <pointsMaterial
         size={0.05}
+        map={circleTexture}
+        alphaMap={circleTexture}
         vertexColors
         transparent
         opacity={0.35}
