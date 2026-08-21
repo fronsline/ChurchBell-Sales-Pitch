@@ -133,7 +133,7 @@ export default function DioceseROI() {
           </p>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flexShrink: 0, paddingLeft: 22, borderLeft: '2px solid rgba(115, 103, 240, 0.22)' }}>
-          <span className="gradient-text" style={{ fontSize: '3rem', fontWeight: 900, lineHeight: 1 }}>2X+</span>
+          <span className="gradient-text" style={{ fontSize: '3rem', fontWeight: 900, lineHeight: 1 }}>3–4X</span>
           <span style={{ fontSize: '0.68rem', fontWeight: 800, letterSpacing: '0.09em', color: 'var(--text-muted)', marginTop: 3 }}>VALUE BACK, EVERY YEAR</span>
         </div>
       </motion.div>
