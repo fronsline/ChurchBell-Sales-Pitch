@@ -1,7 +1,37 @@
 import { motion } from 'framer-motion';
 import { HugeiconsIcon } from '@hugeicons/react';
-import { Coins01Icon, Briefcase01Icon, WalletAdd01Icon, CloudServerIcon, JusticeScale01Icon, CheckmarkBadge01Icon, Calculator01Icon } from '@hugeicons-pro/core-stroke-rounded';
+import { Coins01Icon, Briefcase01Icon, WalletAdd01Icon, CloudServerIcon, JusticeScale01Icon, CheckmarkBadge01Icon, Calculator01Icon, Rocket01Icon } from '@hugeicons-pro/core-stroke-rounded';
 import { FadeUpText, StaggerContainer, StaggerItem } from '../components/AnimatedText';
+
+function FeeBox({ icon, amount, period, title, sub, free, delay }) {
+  const accent = free ? 'var(--success)' : 'var(--primary)';
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay, duration: 0.5 }}
+      style={{
+        display: 'flex', alignItems: 'center', gap: 13, padding: '15px 20px', background: 'white',
+        border: `1.5px solid ${free ? '#BDF0D0' : 'var(--line)'}`, borderRadius: 16, boxShadow: 'var(--shadow-sm)', textAlign: 'left',
+      }}
+    >
+      <div style={{
+        width: 44, height: 44, borderRadius: 11, flexShrink: 0,
+        background: free ? 'linear-gradient(135deg, #38D98A 0%, #1Fae68 100%)' : 'var(--gradient-primary)',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+      }}>
+        <HugeiconsIcon icon={icon} size={22} color="white" strokeWidth={1.7} />
+      </div>
+      <div>
+        <div style={{ display: 'flex', alignItems: 'baseline', gap: 7 }}>
+          <span style={{ fontSize: '1.3rem', fontWeight: 800, color: accent }}>{amount}</span>
+          <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>{period}</span>
+          {free && <span style={{ fontSize: '0.58rem', fontWeight: 800, color: 'white', background: 'var(--success)', padding: '2px 8px', borderRadius: 100 }}>FREE</span>}
+        </div>
+        <div style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-heading)', marginTop: 1 }}>{title}</div>
+        <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>{sub}</div>
+      </div>
+    </motion.div>
+  );
+}
 
 const existingFunds = [
   { icon: Coins01Icon, label: 'Gratuity Fund' },
@@ -34,13 +64,13 @@ export default function DiocesePricingOption2() {
         </h2>
       </FadeUpText>
       <FadeUpText delay={0.2}>
-        <p style={{ marginBottom: 26, color: 'var(--text-muted)', maxWidth: 760, fontSize: '0.96rem' }}>
+        <p style={{ marginBottom: 16, color: 'var(--text-muted)', maxWidth: 760, fontSize: '0.96rem' }}>
           Every church already contributes to common diocesan funds. The Digital Fund is simply one more.
         </p>
       </FadeUpText>
 
       {/* existing funds + Digital Fund */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap', justifyContent: 'center', marginBottom: 26 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap', justifyContent: 'center', marginBottom: 16 }}>
         {existingFunds.map((f, i) => (
           <motion.div
             key={f.label}
@@ -65,7 +95,7 @@ export default function DiocesePricingOption2() {
       {/* The headline statement */}
       <motion.div
         initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8, duration: 0.5 }}
-        style={{ marginBottom: 24, maxWidth: 860 }}
+        style={{ marginBottom: 16, maxWidth: 860 }}
       >
         <p style={{ fontSize: '1.15rem', color: 'var(--text-heading)', margin: 0, lineHeight: 1.5, fontWeight: 600 }}>
           Each church contributes <span style={{ color: 'var(--primary)', fontWeight: 800 }}>1–2% of its income</span> to the Digital Fund,
@@ -90,17 +120,17 @@ export default function DiocesePricingOption2() {
         ))}
       </StaggerContainer>
 
-      {/* example */}
-      <motion.div
-        initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.45, duration: 0.5 }}
-        style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 18, padding: '13px 24px', background: 'var(--primary-bg)', borderRadius: 14 }}
+      {/* Platform cost + onboarding */}
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18, width: '100%', maxWidth: 760, marginTop: 18 }}>
+        <FeeBox icon={CloudServerIcon} amount="₹20,000–30,000*" period="/ month" title="Diocese Platform" sub="The diocese app, hosted & maintained" delay={1.45} />
+        <FeeBox free icon={Rocket01Icon} amount="₹0" period="one-time" title="Onboarding & Implementation" sub="Migration, setup & training, on us" delay={1.55} />
+      </div>
+      <motion.p
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.7, duration: 0.5 }}
+        style={{ fontSize: '0.72rem', color: 'var(--text-muted)', margin: '9px 0 0', maxWidth: 760, textAlign: 'left' }}
       >
-        <HugeiconsIcon icon={Coins01Icon} size={22} color="#7367F0" strokeWidth={1.7} style={{ flexShrink: 0 }} />
-        <p style={{ fontSize: '0.9rem', color: 'var(--text-heading)', margin: 0 }}>
-          For example, a church with <strong>₹10,00,000</strong> annual income contributes about
-          <strong style={{ color: 'var(--primary)' }}> ₹10,000–20,000 a year</strong>.
-        </p>
-      </motion.div>
+        *Diocese Platform fee is subject to change based on the load on our cloud services.
+      </motion.p>
     </div>
   );
 }

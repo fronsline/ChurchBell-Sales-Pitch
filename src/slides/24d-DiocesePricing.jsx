@@ -155,18 +155,24 @@ export default function DiocesePricing() {
 
       {/* Two fee boxes */}
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18, width: '100%', maxWidth: 760, marginTop: 6 }}>
-        <FeeBox icon={CloudServerIcon} amount="₹12,000–15,000" period="/ month" title="Diocese Platform" sub="The diocese app, hosted & maintained" delay={1.25} />
+        <FeeBox icon={CloudServerIcon} amount="₹20,000–30,000*" period="/ month" title="Diocese Platform" sub="The diocese app, hosted & maintained" delay={1.25} />
         <FeeBox free icon={Rocket01Icon} amount="₹0" period="one-time" title="Onboarding & Implementation" sub="Migration, setup & training, on us" delay={1.4} />
       </div>
+      <motion.p
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5, duration: 0.5 }}
+        style={{ fontSize: '0.72rem', color: 'var(--text-muted)', margin: '9px 0 0', maxWidth: 760, textAlign: 'left' }}
+      >
+        *Diocese Platform fee is subject to change based on the load on our cloud services.
+      </motion.p>
 
       {/* Self-funding insight */}
       <motion.div
-        initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.55, duration: 0.5 }}
-        style={{ display: 'flex', alignItems: 'center', gap: 13, padding: '13px 22px', background: 'var(--primary-bg)', borderRadius: 14, textAlign: 'left', maxWidth: 880, marginTop: 14 }}
+        initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.6, duration: 0.5 }}
+        style={{ display: 'flex', alignItems: 'center', gap: 13, padding: '13px 22px', background: 'var(--primary-bg)', borderRadius: 14, textAlign: 'left', maxWidth: 880, marginTop: 12 }}
       >
         <HugeiconsIcon icon={ChartIncreaseIcon} size={24} color="#28C76F" strokeWidth={1.7} style={{ flexShrink: 0 }} />
         <p style={{ fontSize: '0.86rem', color: 'var(--text-heading)', margin: 0, lineHeight: 1.5 }}>
-          At about <strong>6,000–7,500 members</strong>, the diocese's ₹2/member share already covers the platform fee.
+          At about <strong>10,000–15,000 members</strong>, the diocese's ₹2/member share already covers the platform fee.
           Beyond that, <strong style={{ color: 'var(--primary)' }}>the platform pays for itself</strong>.
         </p>
       </motion.div>
