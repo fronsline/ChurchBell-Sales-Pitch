@@ -106,7 +106,7 @@ export default function DiocesePricing() {
           padding: '6px 15px', borderRadius: 100, background: 'var(--primary-bg)',
         }}>
           <HugeiconsIcon icon={UserMultiple02Icon} size={15} color="#7367F0" strokeWidth={1.9} />
-          <span style={{ fontSize: '0.74rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '0.06em' }}>OPTION 1 · PER-MEMBER MODEL</span>
+          <span style={{ fontSize: '0.74rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '0.06em' }}>OPTION 2 · PER-MEMBER MODEL</span>
         </div>
       </FadeUpText>
       <FadeUpText delay={0.1}>
@@ -126,7 +126,7 @@ export default function DiocesePricing() {
         <svg viewBox={`0 0 ${W} ${H}`} width={W} height={H} style={{ position: 'absolute', inset: 0, zIndex: 1 }}>
           <Flow
             d={`M ${SRC.x} ${SRC.y} L ${JUNC} ${SRC.y} L ${JUNC} ${CB.y} L ${CB.x} ${CB.y}`}
-            label="₹4 / member" lx={(JUNC + CB.x) / 2} ly={CB.y - 28} delay={0.7}
+            label="₹3 / member" lx={(JUNC + CB.x) / 2} ly={CB.y - 28} delay={0.7}
           />
           <Flow
             d={`M ${SRC.x} ${SRC.y} L ${JUNC} ${SRC.y} L ${JUNC} ${DIO.y} L ${DIO.x} ${DIO.y}`}
@@ -137,13 +137,13 @@ export default function DiocesePricing() {
         {/* Church (source) */}
         <Card cx={142} cy={130} width={252} delay={0.4}>
           <Head icon={ChurchIcon} title="A Parish Church" desc="500 members" />
-          <Money big="₹3,000 / mo" sub="₹6 per member" color="var(--text-heading)" />
+          <Money big="₹2,500 / mo" sub="₹5 per member" color="var(--text-heading)" />
         </Card>
 
         {/* ChurchBell */}
         <Card cx={848} cy={64} width={250} delay={0.95}>
           <Head img="/images/icon-512.png" title="ChurchBell" desc="Software platform" bg="#F1EEFF" />
-          <Money big="₹2,000 / mo" sub="₹4 per member" color="var(--primary)" />
+          <Money big="₹1,500 / mo" sub="₹3 per member" color="var(--primary)" />
         </Card>
 
         {/* Diocese ops */}
@@ -155,7 +155,7 @@ export default function DiocesePricing() {
 
       {/* Two fee boxes */}
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18, width: '100%', maxWidth: 760, marginTop: 6 }}>
-        <FeeBox icon={CloudServerIcon} amount="₹10,000" period="/ month flat" title="Diocese Platform" sub="The diocese app, hosted & maintained" delay={1.25} />
+        <FeeBox icon={CloudServerIcon} amount="₹12,000–15,000" period="/ month" title="Diocese Platform" sub="The diocese app, hosted & maintained" delay={1.25} />
         <FeeBox free icon={Rocket01Icon} amount="₹0" period="one-time" title="Onboarding & Implementation" sub="Migration, setup & training, on us" delay={1.4} />
       </div>
 
@@ -166,7 +166,7 @@ export default function DiocesePricing() {
       >
         <HugeiconsIcon icon={ChartIncreaseIcon} size={24} color="#28C76F" strokeWidth={1.7} style={{ flexShrink: 0 }} />
         <p style={{ fontSize: '0.86rem', color: 'var(--text-heading)', margin: 0, lineHeight: 1.5 }}>
-          At about <strong>5,000 members</strong>, the diocese's ₹2/member share already covers the ₹10,000 platform fee.
+          At about <strong>6,000–7,500 members</strong>, the diocese's ₹2/member share already covers the platform fee.
           Beyond that, <strong style={{ color: 'var(--primary)' }}>the platform pays for itself</strong>.
         </p>
       </motion.div>

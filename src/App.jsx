@@ -40,6 +40,7 @@ import WhyCloud from './slides/24c-WhyCloud';
 import SecurityArchitecture from './slides/24b-SecurityArchitecture';
 import DiocesePricing from './slides/24d-DiocesePricing';
 import DiocesePricingOption2 from './slides/24e-DiocesePricingOption2';
+import DioceseROI from './slides/24f-DioceseROI';
 import Settings from './slides/25-Settings';
 import Pulse from './slides/25b-Pulse';
 import MobileApp from './slides/26-MobileApp';
@@ -112,8 +113,9 @@ const slides = [
   { component: SecurityHero, title: 'Security' },
   { component: WhyCloud, title: 'Cloud vs On-Premise' },
   { component: SecurityArchitecture, title: 'Architecture' },
-  { component: DiocesePricing, title: 'Pricing — Option 1' },
-  { component: DiocesePricingOption2, title: 'Pricing — Option 2' },
+  { component: DiocesePricingOption2, title: 'Pricing — Option 1' },
+  { component: DiocesePricing, title: 'Pricing — Option 2' },
+  { component: DioceseROI, title: 'ROI — Church Savings' },
   { component: DioceseClose, title: 'Diocese CTA' },
   { component: Closing, title: 'Closing' },
 ];

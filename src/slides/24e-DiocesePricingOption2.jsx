@@ -12,7 +12,7 @@ const existingFunds = [
 const benefits = [
   { icon: CheckmarkBadge01Icon, title: 'Familiar', desc: 'Collected exactly like the Medical & Harness funds, through the assessment. Nothing new to administer.' },
   { icon: JusticeScale01Icon, title: 'Fair', desc: 'Scales with each church\'s income, no counting heads. Bigger churches naturally contribute more.' },
-  { icon: CheckmarkBadge01Icon, title: 'All-inclusive', desc: 'Covers the platform, the diocese app, support and updates. Onboarding stays free.' },
+  { icon: CheckmarkBadge01Icon, title: 'All-inclusive', desc: 'Covers ChurchBell, software maintenance, hardware and a digital-transformation team. Onboarding stays free.' },
 ];
 
 export default function DiocesePricingOption2() {
@@ -24,7 +24,7 @@ export default function DiocesePricingOption2() {
           padding: '6px 15px', borderRadius: 100, background: 'var(--primary-bg)',
         }}>
           <HugeiconsIcon icon={Calculator01Icon} size={15} color="#7367F0" strokeWidth={1.9} />
-          <span style={{ fontSize: '0.74rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '0.06em' }}>OPTION 2 · THE DIGITAL FUND</span>
+          <span style={{ fontSize: '0.74rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '0.06em' }}>OPTION 1 · THE DIGITAL FUND</span>
         </div>
       </FadeUpText>
 
@@ -69,7 +69,7 @@ export default function DiocesePricingOption2() {
       >
         <p style={{ fontSize: '1.15rem', color: 'var(--text-heading)', margin: 0, lineHeight: 1.5, fontWeight: 600 }}>
           Each church contributes <span style={{ color: 'var(--primary)', fontWeight: 800 }}>1–2% of its income</span> to the Digital Fund,
-          which runs ChurchBell for the entire diocese.
+          which powers the diocese's whole digital journey: ChurchBell, software upkeep, hardware, and a dedicated team to run it.
         </p>
       </motion.div>
 
