@@ -1,4 +1,4 @@
-// ChurchBell Brand Colors — LIGHT THEME presentation
+// ChurchBell Brand Colors, LIGHT THEME presentation
 export const colors = {
   primary: '#7367F0',
   primaryLight: '#8D82FD',

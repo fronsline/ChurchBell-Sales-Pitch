@@ -1,15 +1,17 @@
 import { motion } from 'framer-motion';
 import { HugeiconsIcon } from '@hugeicons/react';
 import {
-  Coins01Icon, Building06Icon, Briefcase01Icon, Baby01Icon,
+  Coins01Icon, Building06Icon, Briefcase01Icon, Wallet01Icon, JusticeScale01Icon, Mail01Icon,
 } from '@hugeicons-pro/core-stroke-rounded';
 import { FadeUpText } from '../components/AnimatedText';
 
 const pillars = [
   { icon: Coins01Icon, label: 'Assessment' },
   { icon: Building06Icon, label: 'Property & Land' },
+  { icon: Wallet01Icon, label: 'Finance' },
   { icon: Briefcase01Icon, label: 'Staff & HR' },
-  { icon: Baby01Icon, label: "Children's Ministry" },
+  { icon: JusticeScale01Icon, label: 'Legal' },
+  { icon: Mail01Icon, label: 'Mail & Circulars' },
 ];
 
 export default function DioceseClose() {
@@ -34,7 +36,7 @@ export default function DioceseClose() {
           background: 'rgba(255, 255, 255, 0.72)', backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)',
           border: '1px solid rgba(255, 255, 255, 0.5)', borderRadius: 24, padding: '48px 64px',
           display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative', zIndex: 1,
-          boxShadow: '0 8px 32px rgba(115, 103, 240, 0.12)', maxWidth: 860,
+          boxShadow: '0 8px 32px rgba(115, 103, 240, 0.12)', maxWidth: 1000,
         }}
       >
         <FadeUpText delay={0.3}>
@@ -45,13 +47,13 @@ export default function DioceseClose() {
 
         <FadeUpText delay={0.5}>
           <p style={{ color: 'var(--text-secondary)', fontSize: '1.12rem', marginBottom: 36, textAlign: 'center', maxWidth: 620 }}>
-            On the same platform your churches already trust — one connected, transparent,
+            On the same platform your churches already use: one connected, transparent,
             accountable diocese.
           </p>
         </FadeUpText>
 
         {/* Pillars */}
-        <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', justifyContent: 'center' }}>
+        <div style={{ display: 'flex', gap: 12, flexWrap: 'nowrap', justifyContent: 'center' }}>
           {pillars.map((p, i) => (
             <motion.div
               key={p.label}
@@ -60,8 +62,8 @@ export default function DioceseClose() {
               transition={{ duration: 0.45, delay: 0.7 + i * 0.12 }}
               style={{
                 display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10,
-                padding: '18px 24px', background: 'rgba(255,255,255,0.9)',
-                border: '1px solid var(--line)', borderRadius: 'var(--radius-sm)', minWidth: 150,
+                padding: '16px 18px', background: 'rgba(255,255,255,0.9)',
+                border: '1px solid var(--line)', borderRadius: 'var(--radius-sm)', minWidth: 118,
                 boxShadow: 'var(--shadow-sm)',
               }}
             >

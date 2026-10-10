@@ -8,14 +8,21 @@ import GlassCard from '../components/GlassCard';
 
 const pillars = [
   { icon: Activity01Icon, label: 'Data Quality', sub: 'How complete your records are', score: 86, weight: '50%' },
-  { icon: DashboardSquare01Icon, label: 'Engagement', sub: 'How actively features are used', score: 74, weight: '30%' },
-  { icon: SmartPhone01Icon, label: 'Mobile Readiness', sub: 'Who can actually use the app', score: 79, weight: '20%' },
+  { icon: DashboardSquare01Icon, label: 'Module Engagement', sub: 'How actively each module is used', score: 74, weight: '30%' },
+  { icon: SmartPhone01Icon, label: 'Mobile Readiness', sub: 'Family heads & payers who can use the app', score: 79, weight: '20%' },
 ];
 
 const actions = [
-  '14 family heads are missing a mobile number — unblock app access',
-  'Subscription payers missing key fields — fix to enable receipts',
-  'Donations module activity dropped 40% — schedule a refresher',
+  '14 family heads missing a mobile number, so they cannot sign in to the app',
+  '9 subscription payers missing a mobile number, so no receipts on their phone',
+  '31 members missing a birth date, so no birthday wishes for them',
+];
+
+const facts = [
+  'Updated every Sunday',
+  'Compared with churches your size',
+  'PDF summary on the 1st of every month',
+  'Hidden modules don\'t count against you',
 ];
 
 export default function Pulse() {
@@ -23,12 +30,12 @@ export default function Pulse() {
     <div className="slide-center">
       <FadeUpText delay={0.1}>
         <h2 style={{ marginBottom: 6 }}>
-          Pulse — <span className="gradient-text">Your Church's Health Score</span>
+          Pulse: <span className="gradient-text">Your Church's Health Score</span>
         </h2>
       </FadeUpText>
       <FadeUpText delay={0.2}>
-        <p style={{ marginBottom: 32, color: 'var(--text-muted)', maxWidth: 640 }}>
-          One number tells you how healthy your data is. Then it tells you exactly what to fix — in priority order.
+        <p style={{ marginBottom: 28, color: 'var(--text-muted)', maxWidth: 760 }}>
+          One number out of 100: how complete your records are, how well each module is used, and how many members can use the app. Then it tells you what to fix first.
         </p>
       </FadeUpText>
 
@@ -106,7 +113,7 @@ export default function Pulse() {
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
           <HugeiconsIcon icon={Target01Icon} size={20} color="var(--primary)" strokeWidth={1.6} />
           <span style={{ fontWeight: 700, fontSize: '0.95rem', color: 'var(--text-heading)' }}>Action Queue</span>
-          <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>— the most impactful fixes this week</span>
+          <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>The fixes that matter most this week</span>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 14 }}>
           {actions.map((a, i) => (
@@ -123,6 +130,14 @@ export default function Pulse() {
           ))}
         </div>
       </GlassCard>
+
+      <FadeUpText delay={1.8}>
+        <div style={{ display: 'flex', gap: 10, marginTop: 18, flexWrap: 'wrap', justifyContent: 'center' }}>
+          {facts.map((f) => (
+            <span key={f} className="tag tag-primary" style={{ fontSize: '0.75rem' }}>{f}</span>
+          ))}
+        </div>
+      </FadeUpText>
     </div>
   );
 }

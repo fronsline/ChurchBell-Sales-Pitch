@@ -5,18 +5,19 @@ import { FadeUpText, StaggerContainer, StaggerItem } from '../components/Animate
 import GlassCard from '../components/GlassCard';
 
 const features = [
-  'Consolidated Receipts and Payments across every church',
-  'Trial Balance, Day Book and Account Statistics, diocese-wide',
-  'Grouped by a standard ledger code, so every church reconciles the same way',
-  'Drill from the diocese total to a single church to an individual receipt',
-  'Near-real-time rollups, with no waiting for year-end to consolidate',
+  'Receipts & Payments, Day Book, Trial Balance and Account Statistics across every church',
+  'One standard chart of ledgers with fixed codes, so every church adds up the same way',
+  'The diocese groups ledgers its own way on the Receipts & Payments statement',
+  'Drill from the diocese total to a church, and down to a single receipt where the church shares it',
+  'Filter by church, period or ledger; export to Excel or PDF',
+  'No waiting for year-end: the figures update as churches enter receipts',
 ];
 
 const rows = [
-  { ledger: 'Assessment Income', code: 'INC_ASMT', amount: '48,20,000' },
-  { ledger: 'Harvest Festival', code: 'INC_HARV', amount: '12,90,000' },
-  { ledger: 'Subscription', code: 'INC_SUBS', amount: '21,40,000' },
-  { ledger: 'Special Offerings', code: 'INC_SPOF', amount: '7,60,000' },
+  { ledger: 'Offertory', code: 'INC_OFFERTORY', amount: '48,20,000' },
+  { ledger: 'Subscription', code: 'INC_SUBSCRIPTION', amount: '21,40,000' },
+  { ledger: 'Thanks Offertory', code: 'INC_THANKS_OFFERTORY', amount: '12,90,000' },
+  { ledger: 'Marriage Fees', code: 'INC_MARRIAGE_FEES', amount: '7,60,000' },
 ];
 
 export default function DioceseFinance() {
@@ -30,8 +31,8 @@ export default function DioceseFinance() {
         </FadeUpText>
         <FadeUpText delay={0.2}>
           <p style={{ marginBottom: 24, color: 'var(--text-muted)', fontSize: '0.98rem' }}>
-            The four reports the Treasurer lives by, Receipts &amp; Payments, Trial Balance, Day Book
-            and Account Statistics, across every church, live and drillable to a single receipt.
+            The four reports the Treasurer lives by, across every church, built from the receipts each
+            church already enters. No collecting statements, no retyping.
           </p>
         </FadeUpText>
 
@@ -76,7 +77,7 @@ export default function DioceseFinance() {
 
           {/* Column header */}
           <div style={{
-            display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr', padding: '10px 22px',
+            display: 'grid', gridTemplateColumns: '1.15fr 1.45fr 0.9fr', padding: '10px 22px',
             background: 'var(--bg-shade1)', fontSize: '0.64rem', fontWeight: 600,
             color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em',
           }}>
@@ -90,7 +91,7 @@ export default function DioceseFinance() {
             <motion.div
               key={r.code}
               style={{
-                display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr', alignItems: 'center',
+                display: 'grid', gridTemplateColumns: '1.15fr 1.45fr 0.9fr', alignItems: 'center',
                 padding: '11px 22px', borderBottom: '1px solid var(--line)', fontSize: '0.82rem',
               }}
               initial={{ opacity: 0, x: 20 }}
@@ -98,7 +99,7 @@ export default function DioceseFinance() {
               transition={{ duration: 0.4, delay: 0.8 + i * 0.1 }}
             >
               <span style={{ fontWeight: 500, color: 'var(--text-heading)' }}>{r.ledger}</span>
-              <span style={{ fontSize: '0.66rem', fontFamily: 'monospace', color: 'var(--primary)', fontWeight: 600 }}>{r.code}</span>
+              <span style={{ fontSize: '0.6rem', fontFamily: 'monospace', color: 'var(--primary)', fontWeight: 600 }}>{r.code}</span>
               <span style={{ textAlign: 'right', color: 'var(--text-secondary)' }}>₹{r.amount}</span>
             </motion.div>
           ))}

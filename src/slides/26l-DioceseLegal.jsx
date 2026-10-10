@@ -5,12 +5,12 @@ import { FadeUpText, StaggerContainer, StaggerItem } from '../components/Animate
 import GlassCard from '../components/GlassCard';
 
 const features = [
-  'A court-case register: court, case number, parties and current status',
-  'Hearings diary and calendar, so the next date is always in front of you',
-  'Sent and received legal notices, each with its deadline',
-  'Multi-step reminders at 7, 3 and 1 days, and again on the day',
-  'Link a case to the parish or property it concerns',
-  'Every document attached to the case file, nothing left loose',
+  'A court-case register: court, case number, parties, status, updates and documents',
+  'A Legal Diary of every hearing, with court holidays marked and a feed for your phone calendar',
+  'Legal notices sent and received with reply deadlines, plus an in/out register of legal papers',
+  'Title opinions on land and enquiry commissions, kept with the rest of the file',
+  'Reminders 7, 3 and 1 days before and on the day, by push and WhatsApp, to the people you name',
+  'Link a case to a church or a property; see a parish\'s own cases when it chooses to share them',
 ];
 
 const reminders = [
@@ -32,7 +32,7 @@ export default function DioceseLegal() {
         <FadeUpText delay={0.2}>
           <p style={{ marginBottom: 24, color: 'var(--text-muted)', fontSize: '0.98rem' }}>
             Every court case, hearing and legal notice the diocese is involved in, with reminders
-            that fire well before the date, on both push and WhatsApp.
+            that arrive well before the date.
           </p>
         </FadeUpText>
 

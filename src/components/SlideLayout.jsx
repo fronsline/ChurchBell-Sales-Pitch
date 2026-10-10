@@ -37,7 +37,7 @@ export default function SlideLayout({ children, slideKey, direction }) {
   );
 }
 
-// Section header slide layout — big centered text with background image
+// Section header slide layout: big centered text with background image
 export function SectionSlide({ title, subtitle, color = '#7367F0', bgImage }) {
   return (
     <div className="slide-center" style={{ position: 'relative' }}>
@@ -66,7 +66,7 @@ export function SectionSlide({ title, subtitle, color = '#7367F0', bgImage }) {
         </div>
       )}
 
-      {/* Floating blobs — above background image */}
+      {/* Floating blobs, above background image */}
       <motion.div
         className="bg-blob bg-blob-1"
         style={{ opacity: 0.08, zIndex: 1 }}

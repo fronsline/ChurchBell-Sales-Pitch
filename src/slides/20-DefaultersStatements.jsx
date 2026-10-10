@@ -12,10 +12,10 @@ const defaulterNames = [
 ];
 
 const statementFeatures = [
-  'Member contribution statements',
-  'Subscription insights — month-by-month grid',
-  'Filter by ledger, date range',
-  'Export to PDF / Excel',
+  'Member contributions: month by month, fund by fund',
+  'Ledger contributors: who gave to each fund',
+  'Declaration defaulters: pledged vs. actually paid',
+  'Pick any dates and ledgers, download in Excel',
 ];
 
 export default function DefaultersStatements() {
@@ -39,7 +39,7 @@ export default function DefaultersStatements() {
                 <HugeiconsIcon icon={CheckListIcon} size={22} color="var(--primary)" /> Monthly Defaulters
               </h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: 20 }}>
-                Select a month — instantly see who hasn't paid. No more checking card by card.
+                Pick a period and see, month by month, who hasn't paid. Filter by area or group, export to Excel. No more checking card by card.
               </p>
 
               {/* Month selector mockup */}
@@ -95,6 +95,9 @@ export default function DefaultersStatements() {
                   </StaggerItem>
                 ))}
               </StaggerContainer>
+              <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: 14, marginBottom: 0 }}>
+                On the 1st of every month, members who missed last month get a gentle reminder in the ChurchBell app.
+              </p>
             </div>
           </FadeUpText>
         </div>
@@ -161,7 +164,7 @@ export default function DefaultersStatements() {
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
                       fontSize: '0.7rem',
                     }}>
-                      {paid === true ? '✓' : paid === false ? '✗' : '—'}
+                      {paid === true ? '✓' : paid === false ? '✗' : '–'}
                     </div>
                   ))}
                 </div>

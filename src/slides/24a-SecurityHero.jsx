@@ -2,44 +2,45 @@ import { motion } from 'framer-motion';
 import { HugeiconsIcon } from '@hugeicons/react';
 import {
   ShieldEnergyIcon, UserShield01Icon, Audit01Icon, Shield01Icon,
-  Building06Icon, Key01Icon, SquareLock02Icon, UserCheck01Icon, ShieldKeyIcon, SmartPhone01Icon,
-  CheckmarkBadge01Icon, Download01Icon, LocationUser04Icon, Clock01Icon, Alert01Icon, Notification01Icon,
-  LockKeyIcon, CloudServerIcon, DatabaseSyncIcon, FolderLibraryIcon, MoneyNotFoundIcon, CloudUploadIcon,
+  Building06Icon, FingerPrintIcon, UserLock01Icon, Calendar01Icon, ShieldKeyIcon, LaptopIcon,
+  DocumentValidationIcon, Download01Icon, Notification03Icon, Alert01Icon, Mail01Icon, Clock01Icon,
+  MapsLocation01Icon, LockKeyIcon, DatabaseSyncIcon, DatabaseExportIcon, MoneyNotFoundIcon,
 } from '@hugeicons-pro/core-stroke-rounded';
 import { FadeUpText, StaggerContainer, StaggerItem } from '../components/AnimatedText';
 
-// All 14 promises, organised into three plain-language themes, each line with its own icon
+// Eighteen promises, organised into three plain-language themes, each line with its own icon.
+// Every line is checked against what the product actually does today.
 const groups = [
   {
     icon: UserShield01Icon, title: 'Who Gets In',
     items: [
       { icon: Building06Icon, t: 'One church can never see another church\'s data' },
-      { icon: Key01Icon, t: 'Login by OTP, never passwords, so nothing is shared or stolen' },
-      { icon: SquareLock02Icon, t: 'Role-based access, so no access means no entry' },
-      { icon: UserCheck01Icon, t: 'Church & diocese admins fully own their own data' },
-      { icon: ShieldKeyIcon, t: 'Brute-force and bot logins are rate-limited and blocked' },
-      { icon: SmartPhone01Icon, t: 'Review your active devices and sign them out any time' },
+      { icon: FingerPrintIcon, t: 'Sign in with a one-time code or a passkey. No passwords to steal' },
+      { icon: UserLock01Icon, t: 'Each person gets Off, View or Manage for each area of the church' },
+      { icon: Calendar01Icon, t: 'Access can end on a set date, or be paused and resumed' },
+      { icon: ShieldKeyIcon, t: 'Repeated wrong codes lock the login; bots are rate-limited' },
+      { icon: LaptopIcon, t: 'See every signed-in phone and computer, and sign any of them out' },
     ],
   },
   {
-    icon: Audit01Icon, title: 'Everything Is Watched',
+    icon: Audit01Icon, title: 'Everything Is Recorded',
     items: [
-      { icon: CheckmarkBadge01Icon, t: 'Every login & change recorded, and tamper-proof' },
-      { icon: Download01Icon, t: 'Downloads are tracked: who exported what, and where' },
-      { icon: LocationUser04Icon, t: 'Login IP recorded; sign-ins from unusual places flagged' },
-      { icon: Notification01Icon, t: 'A new device or location raises an instant alert' },
-      { icon: Clock01Icon, t: 'Auto logout when idle' },
-      { icon: Alert01Icon, t: 'Lockout after repeated wrong OTP attempts' },
+      { icon: DocumentValidationIcon, t: 'Every change goes into a tamper-evident log, checked every night' },
+      { icon: Download01Icon, t: 'Every download and export is recorded: who, what and when' },
+      { icon: Notification03Icon, t: 'A sign-in from a new device or place alerts you at once' },
+      { icon: Alert01Icon, t: 'Repeated failed sign-ins on your account alert you too' },
+      { icon: Mail01Icon, t: 'Critical changes alert the admins you choose, plus a weekly summary' },
+      { icon: Clock01Icon, t: 'Idle web sessions are signed out automatically' },
     ],
   },
   {
     icon: Shield01Icon, title: 'Your Data Is Safe',
     items: [
-      { icon: LockKeyIcon, t: 'Encrypted both in transit and at rest' },
-      { icon: CloudServerIcon, t: 'Database locked in a private network, reachable only via secure tunnel' },
-      { icon: DatabaseSyncIcon, t: 'Daily backups, recoverable for 30 days' },
-      { icon: CloudUploadIcon, t: 'An off-site recovery copy is kept in a second region' },
-      { icon: FolderLibraryIcon, t: 'Nothing is ever truly deleted' },
+      { icon: MapsLocation01Icon, t: 'Hosted in India, on Amazon Web Services in Mumbai' },
+      { icon: LockKeyIcon, t: 'Every connection is encrypted (HTTPS); login codes are never stored as plain text' },
+      { icon: DatabaseSyncIcon, t: 'The database is backed up every night and kept for 30 days' },
+      { icon: ShieldKeyIcon, t: 'Backups are stored encrypted, and a restore has been tested' },
+      { icon: DatabaseExportIcon, t: 'Download all your church\'s data any time, in Excel, CSV or JSON' },
       { icon: MoneyNotFoundIcon, t: 'We never sell your data' },
     ],
   },
@@ -56,19 +57,19 @@ export default function SecurityHero() {
         }}>
           <HugeiconsIcon icon={ShieldEnergyIcon} size={17} color="#7367F0" strokeWidth={1.8} />
           <span style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--primary)', letterSpacing: '0.02em' }}>
-            Enterprise-grade security, built in
+            Security built in, from day one
           </span>
         </div>
       </FadeUpText>
 
       <FadeUpText delay={0.12}>
         <h2 style={{ marginBottom: 8 }}>
-          Security You Can <span className="gradient-text">Stake the Diocese On</span>
+          Security You Can <span className="gradient-text">Trust Every Day</span>
         </h2>
       </FadeUpText>
       <FadeUpText delay={0.2}>
         <p style={{ marginBottom: 34, color: 'var(--text-muted)', fontSize: '0.98rem', maxWidth: 720 }}>
-          The same standards banks and hospitals run on, in plain language.
+          What keeps your church's records safe, in plain language.
         </p>
       </FadeUpText>
 
@@ -104,8 +105,8 @@ export default function SecurityHero() {
                   <h3 style={{ fontSize: '1.16rem', margin: 0, color: 'var(--text-heading)' }}>{g.title}</h3>
                 </div>
 
-                {/* items — distributed to fill the full card height (balanced across cards) */}
-                <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: 16 }}>
+                {/* items: distributed to fill the full card height (balanced across cards) */}
+                <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: 14 }}>
                   {g.items.map((it) => (
                     <div key={it.t} style={{ display: 'flex', alignItems: 'center', gap: 13 }}>
                       <span style={{
@@ -114,7 +115,7 @@ export default function SecurityHero() {
                       }}>
                         <HugeiconsIcon icon={it.icon} size={20} color="#7367F0" strokeWidth={1.7} />
                       </span>
-                      <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.45 }}>{it.t}</span>
+                      <span style={{ fontSize: '0.86rem', color: 'var(--text-secondary)', lineHeight: 1.4 }}>{it.t}</span>
                     </div>
                   ))}
                 </div>

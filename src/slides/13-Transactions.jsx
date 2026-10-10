@@ -12,12 +12,22 @@ const manualSteps = [
 ];
 
 const autoChecks = [
-  'Cash Book updated',
-  'Ledger updated',
+  'Cash Book & Ledger updated',
   'Day Book updated',
+  'Subscription Card updated',
   'Receipt PDF generated',
-  'WhatsApp sent to member',
-  'SMS sent to member',
+  'WhatsApp + PDF to the member',
+  'Shows in the member\'s app',
+];
+
+// Everything else the treasurer does from the same Finance menu.
+const alsoTags = [
+  'Receipts',
+  'Payments',
+  'Contra (bank ↔ cash)',
+  'Family receipts, whole household at once',
+  'Your own bill books & numbering',
+  'Cancel a receipt, with the record kept',
 ];
 
 export default function Transactions() {
@@ -28,11 +38,11 @@ export default function Transactions() {
 
       <FadeUpText>
         <h2 style={{ marginBottom: 8 }}>
-          Transactions — <span className="gradient-text">One Entry, Everything Updated</span>
+          Transactions: <span className="gradient-text">One Entry, Everything Updated</span>
         </h2>
       </FadeUpText>
       <FadeUpText delay={0.2}>
-        <p style={{ marginBottom: 40, color: 'var(--text-muted)' }}>
+        <p style={{ marginBottom: 28, color: 'var(--text-muted)' }}>
           The most impactful change for your treasurer
         </p>
       </FadeUpText>
@@ -123,7 +133,7 @@ export default function Transactions() {
           style={{ textAlign: 'left', padding: 32 }}
         >
           <h3 style={{ color: 'var(--primary)', marginBottom: 20, textAlign: 'center', fontSize: '1.2rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}>
-            <HugeiconsIcon icon={SchoolBell01Icon} size={22} color="var(--primary)" /> After — ChurchBell
+            <HugeiconsIcon icon={SchoolBell01Icon} size={22} color="var(--primary)" /> After: ChurchBell
           </h3>
 
           <motion.div
@@ -182,6 +192,17 @@ export default function Transactions() {
           </motion.p>
         </motion.div>
       </div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 3.0, duration: 0.5 }}
+        style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 8, marginTop: 24, maxWidth: 900 }}
+      >
+        {alsoTags.map((t) => (
+          <span key={t} className="tag tag-primary">{t}</span>
+        ))}
+      </motion.div>
     </div>
   );
 }

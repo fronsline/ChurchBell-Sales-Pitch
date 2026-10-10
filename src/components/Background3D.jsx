@@ -55,7 +55,7 @@ function ParticleField() {
   useFrame((state) => {
     const t = state.clock.elapsedTime * 0.2; // slow, steady
     const posArray = mesh.current.geometry.attributes.position.array;
-    const AMP = 0.18; // bounded drift — gentle bob in place
+    const AMP = 0.18; // bounded drift, gentle bob in place
     for (let i = 0; i < count; i++) {
       const i3 = i * 3;
       posArray[i3] = base[i3] + Math.cos(t + i * 0.4) * AMP;

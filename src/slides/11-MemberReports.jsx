@@ -3,14 +3,14 @@ import { FadeUpText, StaggerContainer, StaggerItem, GradientHeading } from '../c
 import Counter from '../components/Counter';
 import GlassCard from '../components/GlassCard';
 import { HugeiconsIcon } from '@hugeicons/react';
-import { Search01Icon, Baby01Icon, ChurchIcon, UserGroupIcon, Building01Icon, FileExportIcon } from '@hugeicons-pro/core-stroke-rounded';
+import { Search01Icon, Baby01Icon, ChurchIcon, UserGroupIcon, Building01Icon, FileExportIcon, Home01Icon } from '@hugeicons-pro/core-stroke-rounded';
 
 const useCases = [
   { icon: Search01Icon, text: 'Senior citizens above 80' },
   { icon: Baby01Icon, text: 'Kids below 12 for Sunday school' },
   { icon: ChurchIcon, text: 'Subscription payers' },
   { icon: UserGroupIcon, text: 'Family heads' },
-  { icon: Building01Icon, text: 'Members by area group' },
+  { icon: Building01Icon, text: 'Women in each area group' },
 ];
 
 export default function MemberReports() {
@@ -21,7 +21,7 @@ export default function MemberReports() {
 
       <FadeUpText>
         <h2 style={{ marginBottom: 40 }}>
-          Member Reports — <span className="gradient-text">Seconds, Not Hours</span>
+          Member Reports: <span className="gradient-text">Seconds, Not Hours</span>
         </h2>
       </FadeUpText>
 
@@ -64,8 +64,7 @@ export default function MemberReports() {
         <div className="slide-right" style={{ gap: 32 }}>
           <GlassCard delay={0.3} style={{ textAlign: 'center', padding: '40px 48px' }}>
             <div style={{ fontSize: '5rem', fontWeight: 700, lineHeight: 1 }}>
-              <span style={{ color: 'var(--primary)', fontWeight: 300, fontSize: '3.5rem' }}>&lt; </span>
-              <Counter from={0} to={5} duration={1.5} delay={0.8} className="gradient-text" />
+              <Counter from={0} to={13} duration={1.5} delay={0.8} className="gradient-text" />
             </div>
             <p style={{
               fontSize: '1.1rem',
@@ -73,7 +72,7 @@ export default function MemberReports() {
               marginTop: 12,
               fontWeight: 500,
             }}>
-              seconds to generate any member report
+              filters you can combine: age, gender, group, area, type and more
             </p>
           </GlassCard>
 
@@ -82,19 +81,19 @@ export default function MemberReports() {
               <div style={{ marginBottom: 8, display: 'flex', justifyContent: 'center' }}>
                 <HugeiconsIcon icon={FileExportIcon} size={28} color="#7367F0" />
               </div>
-              <h3 style={{ fontSize: '1rem' }}>PDF Export</h3>
+              <h3 style={{ fontSize: '1rem' }}>PDF & Excel</h3>
               <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: 4 }}>
-                Print-ready reports
+                Print it or edit it
               </p>
             </GlassCard>
 
             <GlassCard delay={0.75} style={{ flex: 1, textAlign: 'center', padding: '20px' }}>
               <div style={{ marginBottom: 8, display: 'flex', justifyContent: 'center' }}>
-                <HugeiconsIcon icon={FileExportIcon} size={28} color="#7367F0" />
+                <HugeiconsIcon icon={Home01Icon} size={28} color="#7367F0" />
               </div>
-              <h3 style={{ fontSize: '1rem' }}>Excel Export</h3>
+              <h3 style={{ fontSize: '1rem' }}>Family Report</h3>
               <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: 4 }}>
-                Editable spreadsheets
+                One family's card, payments, visits & attendance
               </p>
             </GlassCard>
           </div>

@@ -3,10 +3,11 @@ import { FadeUpText, GradientHeading, StaggerContainer, StaggerItem } from '../c
 
 const milestones = [
   { year: '2016', label: 'The Dream' },
-  { year: '2020', label: 'The Opportunity' },
-  { year: '2021', label: 'First Church Goes Live' },
+  { year: '2021', label: 'The Opportunity' },
+  { year: '2022', label: 'First Church Goes Live' },
   { year: '2024', label: 'Word of Mouth Growth' },
   { year: '2025', label: 'Serving Multiple Churches' },
+  { year: '2026', label: 'Across Dioceses & Borders' },
 ];
 
 export default function Story() {
@@ -21,7 +22,7 @@ export default function Story() {
 
         <FadeUpText delay={0.3}>
           <div className="quote-block" style={{ maxWidth: 520 }}>
-            I watched my own relatives — church treasurers — spend hours every Sunday
+            I watched my own relatives, church treasurers, spend hours every Sunday
             after service, writing in multiple ledger books, filling out receipt books,
             stuffing receipts into subscription cards...
           </div>
@@ -33,6 +34,7 @@ export default function Story() {
             During COVID, a church gave me the opportunity and I started building this.
           </p>
         </FadeUpText>
+
       </div>
 
       <div className="slide-right">
@@ -78,7 +80,7 @@ export default function Story() {
                     {m.year}
                   </span>
                   <span style={{ color: 'var(--text-secondary)', marginLeft: 8, fontSize: '0.9rem' }}>
-                    — {m.label}
+                    · {m.label}
                   </span>
                 </div>
               </div>

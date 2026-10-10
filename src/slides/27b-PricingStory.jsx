@@ -28,7 +28,7 @@ export default function PricingStory() {
           style={{ marginBottom: 40, fontSize: '1.1rem', lineHeight: 1.9 }}
         >
           I didn't build ChurchBell to make money. I built it because I saw a need.
-          God gave me the talent in programming and I wanted to give it back to something useful. But we run this in the cloud — and the cloud has real costs.
+          God gave me the talent in programming and I wanted to give it back to something useful. But we run this in the cloud, and the cloud has real costs.
         </motion.div>
 
         {/* Cost breakdown */}
@@ -75,10 +75,9 @@ export default function PricingStory() {
           }}
         >
           <p style={{ fontSize: '1.05rem', color: 'var(--text-heading)', lineHeight: 1.7, margin: 0 }}>
-            We thought through many options — hefty one-time payments, fixed monthly fees.
+            We thought through many options: hefty one-time payments, fixed monthly fees.
             But those don't work for small churches. So we decided to charge
-            <strong style={{ color: 'var(--primary)' }}> what it actually costs us </strong>
-            — and make it fair for everyone.
+            <strong style={{ color: 'var(--primary)' }}> what it actually costs us</strong>, and make it fair for everyone.
           </p>
         </motion.div>
       </div>

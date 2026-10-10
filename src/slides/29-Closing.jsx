@@ -20,7 +20,7 @@ export default function Closing() {
       <motion.img
         src="/images/logo-color.png"
         alt="ChurchBell"
-        style={{ height: 100, marginBottom: 36 }}
+        style={{ height: 72, marginBottom: 20 }}
         initial={{ opacity: 0, scale: 0.7 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -33,12 +33,24 @@ export default function Closing() {
       </FadeUpText>
 
       <FadeUpText delay={0.5}>
-        <p style={{ color: 'var(--text-secondary)', fontSize: '1.15rem', marginBottom: 40 }}>
+        <p style={{ color: 'var(--text-secondary)', fontSize: '1.15rem', marginBottom: 20 }}>
           You'll wonder how you managed without it.
         </p>
       </FadeUpText>
 
-      <GlassCard delay={0.7} style={{ maxWidth: 420, width: '100%', padding: '28px 36px' }}>
+      {/* Offer: mirrors ChurchBell-Website/lib/content.ts `closing` */}
+      <FadeUpText delay={0.6}>
+        <div style={{ marginBottom: 24, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6 }}>
+          <span className="tag tag-primary" style={{ fontSize: '0.95rem', padding: '8px 20px' }}>
+            Free setup. Two months on us. No lock-in, ever.
+          </span>
+          <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+            Training included, in person or on WhatsApp.
+          </span>
+        </div>
+      </FadeUpText>
+
+      <GlassCard delay={0.7} style={{ maxWidth: 420, width: '100%', padding: '18px 32px', height: 'auto' }}>
         {contacts.map((c, i) => (
           <motion.div
             key={i}
@@ -64,7 +76,7 @@ export default function Closing() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.5, duration: 0.7 }}
-        style={{ marginTop: 40 }}
+        style={{ marginTop: 24 }}
       >
         <GradientHeading delay={1.6} className="text-large">
           Connected. United. Blessed.

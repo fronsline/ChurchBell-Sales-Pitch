@@ -5,19 +5,20 @@ import { FadeUpText, StaggerContainer, StaggerItem } from '../components/Animate
 import GlassCard from '../components/GlassCard';
 
 const features = [
-  'Complete member database',
-  'Family management & linking',
-  'Smart filters — age, group, type, area',
-  'Member profile with transaction history',
-  'Excel import — your format or ours',
+  'Complete member register: every family, every member',
+  'Families linked to their family head',
+  'Filters: age, gender, group, area, membership type',
+  'Member profile with payments, house visits & attendance',
+  'Family directory, ready to print',
+  'We import your existing Excel, in any format',
   'Export to PDF & Excel',
 ];
 
 const sampleMembers = [
-  { name: 'John Thomas', type: 'Regular', phone: '98765 43210' },
-  { name: 'Mary Abraham', type: 'Family Head', phone: '98765 12345' },
-  { name: 'Samuel Jacob', type: 'Regular', phone: '91234 56789' },
-  { name: 'Grace Philip', type: 'Youth', phone: '99887 76543' },
+  { name: 'John Thomas', type: 'Primary', phone: '98765 43210' },
+  { name: 'Mary Abraham', type: 'Primary', phone: '98765 12345' },
+  { name: 'Samuel Jacob', type: 'Secondary', phone: '91234 56789' },
+  { name: 'Grace Philip', type: 'Temporary', phone: '99887 76543' },
 ];
 
 export default function Members() {

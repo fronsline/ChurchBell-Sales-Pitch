@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { FadeUpText, StaggerContainer, StaggerItem } from '../components/AnimatedText';
 import GlassCard from '../components/GlassCard';
 import { HugeiconsIcon } from '@hugeicons/react';
-import { SmartPhone01Icon, SmsCodeIcon, WhatsappIcon, DocumentAttachmentIcon, ChurchIcon } from '@hugeicons-pro/core-stroke-rounded';
+import { SmartPhone01Icon, WhatsappIcon, ChurchIcon, CheckmarkCircle02Icon } from '@hugeicons-pro/core-stroke-rounded';
 
 export default function WhatsAppReceipt() {
   return (
@@ -21,7 +21,7 @@ export default function WhatsAppReceipt() {
         <div className="slide-left" style={{ gap: 24 }}>
           <FadeUpText delay={0.2}>
             <p style={{ fontSize: '1.15rem', color: 'var(--text-heading)', fontWeight: 500 }}>
-              The moment you save a transaction, the member receives:
+              Seconds after you save a receipt, the member receives:
             </p>
           </FadeUpText>
 
@@ -39,11 +39,22 @@ export default function WhatsAppReceipt() {
             </StaggerItem>
             <StaggerItem>
               <GlassCard style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '18px 22px' }}>
-                <HugeiconsIcon icon={SmsCodeIcon} size={28} color="#7367F0" />
+                <HugeiconsIcon icon={SmartPhone01Icon} size={28} color="#7367F0" />
                 <div>
-                  <h3 style={{ fontSize: '1rem', marginBottom: 4 }}>SMS Confirmation</h3>
+                  <h3 style={{ fontSize: '1rem', marginBottom: 4 }}>A Note in the ChurchBell App</h3>
                   <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-                    Instant text notification
+                    The receipt is waiting in the member's own app. SMS and email too, if your church turns them on
+                  </p>
+                </div>
+              </GlassCard>
+            </StaggerItem>
+            <StaggerItem>
+              <GlassCard style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '18px 22px' }}>
+                <HugeiconsIcon icon={CheckmarkCircle02Icon} size={28} color="#7367F0" />
+                <div>
+                  <h3 style={{ fontSize: '1rem', marginBottom: 4 }}>You Can See It Arrived</h3>
+                  <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+                    Every receipt shows whether the WhatsApp went through. Send it again in one click
                   </p>
                 </div>
               </GlassCard>

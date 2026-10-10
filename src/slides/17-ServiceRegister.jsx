@@ -6,17 +6,25 @@ import { Book01Icon, LinkSquare01Icon, ReceiptIndianRupeeIcon, Tick01Icon } from
 
 const serviceFields = [
   { label: 'Date', value: 'Mar 16, 2026' },
-  { label: 'Service Type', value: 'Sunday Worship' },
-  { label: 'Preacher', value: 'Rev. Thomas Philip' },
+  { label: 'Service', value: 'Sunday Worship' },
+  { label: 'Led By', value: 'Mr. David Raj' },
+  { label: 'Preached By', value: 'Rev. Thomas Philip' },
   { label: 'Bible Reading', value: 'Psalm 23:1-6' },
-  { label: 'Offering', value: 'Rs. 12,500' },
+  { label: 'Offering', value: '₹12,500' },
 ];
 
 const transactionFields = [
   { label: 'Receipt No', value: 'R-2026-0156' },
-  { label: 'Ledger', value: 'Sunday Offering' },
-  { label: 'Amount', value: 'Rs. 12,500' },
+  { label: 'Sunday Offering', value: '₹10,000' },
+  { label: 'Thanks Offering', value: '₹2,500' },
+  { label: 'Paid Into', value: 'Cash in Hand' },
   { label: 'Date', value: 'Mar 16, 2026' },
+];
+
+const extras = [
+  'Offering split across ledgers',
+  'Count notes & coins as you enter',
+  'Weekly summary PDF every Saturday',
 ];
 
 export default function ServiceRegister() {
@@ -27,12 +35,12 @@ export default function ServiceRegister() {
 
       <FadeUpText>
         <h2 style={{ marginBottom: 4 }}>
-          Service Register — <span className="gradient-text">Digital & Connected</span>
+          Service Register: <span className="gradient-text">Digital & Connected</span>
         </h2>
       </FadeUpText>
       <FadeUpText delay={0.15}>
-        <p style={{ marginBottom: 48, color: 'var(--text-muted)', maxWidth: 600 }}>
-          Every service register entry is linked to its transactions. One system, everything connected.
+        <p style={{ marginBottom: 40, color: 'var(--text-muted)', maxWidth: 680 }}>
+          Write down the service and its offering once. ChurchBell makes the cash receipt for you and keeps the two linked.
         </p>
       </FadeUpText>
 
@@ -69,7 +77,7 @@ export default function ServiceRegister() {
           </div>
         </GlassCard>
 
-        {/* Connection: line — icon — line */}
+        {/* Connection: line, icon, line */}
         <div style={{
           display: 'flex', alignItems: 'center', alignSelf: 'center',
           flexShrink: 0, width: 120, marginTop: 5,
@@ -140,11 +148,22 @@ export default function ServiceRegister() {
                 fontSize: '0.8rem', color: 'var(--success)', fontWeight: 600,
               }}
             >
-              <HugeiconsIcon icon={Tick01Icon} size={16} color="#7367F0" /> Auto-linked to service
+              <HugeiconsIcon icon={Tick01Icon} size={16} color="#28C76F" /> Receipt created automatically
             </motion.div>
           </div>
         </GlassCard>
       </div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.8, duration: 0.5 }}
+        style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 10, marginTop: 32 }}
+      >
+        {extras.map((e) => (
+          <span key={e} className="tag tag-primary" style={{ fontSize: '0.8rem' }}>{e}</span>
+        ))}
+      </motion.div>
     </div>
   );
 }

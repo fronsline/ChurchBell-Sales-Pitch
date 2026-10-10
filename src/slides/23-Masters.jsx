@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { HugeiconsIcon } from '@hugeicons/react';
 import { Notebook01Icon, GridViewIcon, BookOpen01Icon, Tag01Icon } from '@hugeicons-pro/core-stroke-rounded';
 import { FadeUpText, StaggerContainer, StaggerItem } from '../components/AnimatedText';
@@ -8,22 +7,22 @@ const masters = [
   {
     icon: Notebook01Icon,
     title: 'Ledger',
-    desc: 'Chart of accounts — Income, Expense, Bank, Cash. Mark ledgers as card-based for subscription tracking.',
+    desc: 'Your chart of accounts: Income, Expense, Bank, Cash. Mark a ledger card-based to track subscriptions.',
   },
   {
     icon: GridViewIcon,
     title: 'Ledger Group',
-    desc: 'Group ledgers into Income and Expense categories for organized reporting.',
+    desc: 'Group income or expense ledgers under one heading for tidy reports.',
   },
   {
     icon: BookOpen01Icon,
     title: 'Bill Book',
-    desc: 'Auto-numbered receipt & payment books with customizable prefix, financial year, and zero-padding.',
+    desc: 'Auto-numbered receipt & payment books with your prefix, financial year and, if you like, the month.',
   },
   {
     icon: Tag01Icon,
     title: 'Asset Categories',
-    desc: 'Furniture, Audio/Visual, Musical Instruments, Vehicles, and more — with custom icons.',
+    desc: 'Furniture, sound system, musical instruments, vehicles and more, each with its own icon.',
   },
 ];
 
@@ -32,7 +31,7 @@ export default function Masters() {
     <div className="slide-center">
       <FadeUpText delay={0.1}>
         <h2 style={{ marginBottom: 8 }}>
-          Masters — <span className="gradient-text">The Foundation</span>
+          Masters: <span className="gradient-text">The Foundation</span>
         </h2>
       </FadeUpText>
       <FadeUpText delay={0.2}>
@@ -68,12 +67,20 @@ export default function Masters() {
             color: 'var(--primary)', background: 'white', padding: '6px 14px',
             borderRadius: 8, border: '1px solid var(--line)',
           }}>
-            GC-R-2025-2026-00042
+            GC-R-2026-2027-00042
           </span>
           <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
             Church Code – Prefix – Financial Year – Sequence
           </span>
         </div>
+      </FadeUpText>
+
+      <FadeUpText delay={1.05}>
+        <p style={{ marginTop: 18, fontSize: '0.85rem', color: 'var(--text-secondary)', maxWidth: 760 }}>
+          <span className="tag tag-primary" style={{ fontSize: '0.68rem', marginRight: 8 }}>Diocese standard</span>
+          In a diocese, the standard income and expense ledgers come ready-made and stay locked,
+          so every church's accounts add up the same way.
+        </p>
       </FadeUpText>
     </div>
   );

@@ -9,7 +9,7 @@ export default function Groups() {
     <div className="slide-center">
       <FadeUpText delay={0.1}>
         <h2 style={{ marginBottom: 48 }}>
-          Groups — <span className="gradient-text">Organize Your Congregation</span>
+          Groups: <span className="gradient-text">Organize Your Congregation</span>
         </h2>
       </FadeUpText>
 
@@ -43,7 +43,7 @@ export default function Groups() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, justifyContent: 'center' }}>
               {['North', 'South', 'East', 'West'].map((g) => (
                 <span key={g} className="tag" style={{ fontSize: '0.72rem', background: 'var(--bg-shade1)', color: 'var(--text-heading)' }}>
-                  Zone — {g}
+                  Zone {g}
                 </span>
               ))}
             </div>
@@ -51,12 +51,21 @@ export default function Groups() {
         </StaggerItem>
       </StaggerContainer>
 
+      <FadeUpText delay={0.7}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 32, flexWrap: 'wrap', justifyContent: 'center' }}>
+          <span style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--text-heading)', marginRight: 4 }}>Ready-made lists:</span>
+          {['Family Heads', 'Subscription Payers', 'Primary Members', 'Members Above 80'].map((q) => (
+            <span key={q} className="tag tag-success" style={{ fontSize: '0.72rem' }}>{q}</span>
+          ))}
+        </div>
+      </FadeUpText>
+
       <FadeUpText delay={0.8}>
-        <div style={{ display: 'flex', gap: 24, marginTop: 36 }}>
+        <div style={{ display: 'flex', gap: 24, marginTop: 20 }}>
           {[
             { icon: FilterIcon, text: 'Filter members & reports by group' },
-            { icon: BellDotIcon, text: 'Send notifications to specific groups' },
-            { icon: UserGroupIcon, text: 'Bulk assign members to groups' },
+            { icon: BellDotIcon, text: 'Send app alerts & notices to one group' },
+            { icon: UserGroupIcon, text: 'Add many members to a group at once' },
           ].map((f) => (
             <div key={f.text} style={{
               display: 'flex', alignItems: 'center', gap: 8,

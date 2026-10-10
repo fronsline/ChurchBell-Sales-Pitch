@@ -15,9 +15,9 @@ const weekDays = [
 ];
 
 const highlights = [
-  { icon: BirthdayCakeIcon, title: 'Auto WhatsApp Wishes', desc: 'Sent daily at your chosen time' },
-  { icon: Message01Icon, title: 'Weekly PDF to Presbyter', desc: 'Delivered every Friday automatically' },
-  { icon: PresentationBarChart01Icon, title: 'Screen Display Ready', desc: 'Show during Sunday service' },
+  { icon: BirthdayCakeIcon, title: 'Automatic Wishes', desc: 'Every morning by WhatsApp, SMS, app or email' },
+  { icon: Message01Icon, title: 'Weekly PDF List', desc: 'Every Friday, to the people you choose, like your presbyter' },
+  { icon: PresentationBarChart01Icon, title: 'Sunday Slides', desc: 'Export as PowerPoint for the church screen' },
 ];
 
 function DateTypeIcon({ type }) {
@@ -40,7 +40,7 @@ export default function SpecialDates() {
       <FadeUpText delay={0.3}>
         <span className="tag tag-primary mb-4" style={{ marginBottom: 24, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
           <HugeiconsIcon icon={CalendarCheckIn01Icon} size={14} color="#7367F0" strokeWidth={1.5} />
-          Every Sunday — The Week Ahead
+          The Week Ahead: Sunday to Saturday
         </span>
       </FadeUpText>
 
@@ -85,7 +85,7 @@ export default function SpecialDates() {
                     </span>
                   ))
                 ) : (
-                  <span style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>—</span>
+                  <span style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>–</span>
                 )}
               </div>
             </motion.div>

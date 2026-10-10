@@ -5,19 +5,19 @@ import { FadeUpText, StaggerContainer, StaggerItem } from '../components/Animate
 import GlassCard from '../components/GlassCard';
 
 const features = [
-  'Assessable income pulled automatically from each church\'s books',
-  'Assessment due calculated per church — no manual math',
-  'Track every payment received against each church',
-  'Pending & outstanding assessment, visible at a glance',
-  'Church-wise and year-wise statements, audit-ready',
-  'Automated reminders to churches falling behind',
+  'Set each church\'s yearly assessment from its assessable income, by the diocese\'s own rules',
+  'Income straight from the church\'s books, or typed in for churches not yet on ChurchBell',
+  'Twelve monthly dues plus the annual funds, with arrears carried forward',
+  'Churches pay from their own app; the diocese confirms each payment in one queue',
+  'Assessment letters and statements as PDFs, one church or the whole diocese at once',
+  'Reminders before a due date and after it is missed, plus zone and arrears reports',
 ];
 
 const rows = [
-  { church: 'St. John\'s', income: '15,20,000', paid: true },
-  { church: 'Emmanuel', income: '8,90,000', paid: false },
-  { church: 'Christ Church', income: '12,40,000', paid: true },
-  { church: 'Redeemer\'s Church', income: '6,10,000', paid: false },
+  { church: 'St. John\'s', income: '2,28,000', paid: true },
+  { church: 'Emmanuel', income: '1,33,500', paid: false },
+  { church: 'Christ Church', income: '1,86,000', paid: true },
+  { church: 'Redeemer\'s Church', income: '91,500', paid: false },
 ];
 
 export default function Assessment() {
@@ -26,13 +26,13 @@ export default function Assessment() {
       <div className="slide-left">
         <FadeUpText delay={0.1}>
           <h2 style={{ marginBottom: 8 }}>
-            Assessment — <span className="gradient-text">Every Rupee Accounted For</span>
+            Assessment: <span className="gradient-text">Every Rupee Accounted For</span>
           </h2>
         </FadeUpText>
         <FadeUpText delay={0.2}>
           <p style={{ marginBottom: 24, color: 'var(--text-muted)', fontSize: '0.98rem' }}>
-            Churches pay assessment to the diocese on their income. ChurchBell tracks what's due, what's paid,
-            and what's pending — across the whole diocese, live.
+            Churches pay assessment to the diocese on their income. ChurchBell works out what is due, tracks
+            what is paid and what is pending, across the whole diocese, live.
           </p>
         </FadeUpText>
 
@@ -82,7 +82,7 @@ export default function Assessment() {
             color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em',
           }}>
             <span>Church</span>
-            <span>Assessable</span>
+            <span>Yearly</span>
             <span style={{ textAlign: 'right' }}>Status</span>
           </div>
 

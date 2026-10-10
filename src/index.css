@@ -753,3 +753,19 @@ p {
   font-size: 1rem;
   box-shadow: var(--shadow-glow);
 }
+
+/* ===== FIT-TO-SCREEN STAGE (decks with fitToScreen) =====
+   The stage is CSS-zoomed; full-screen fixed backgrounds (inline 100vw × 100vh) would be zoomed
+   too and come out cropped, so divide their size back by the zoom to cover the screen exactly. */
+.deck-stage {
+  /* Same centring as .slide, so layouts narrower than the screen (e.g. .slide-split) sit in the middle. */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.deck-stage [style*="100vw"] {
+  width: calc(100vw / var(--deck-scale)) !important;
+  height: calc(100vh / var(--deck-scale)) !important;
+}

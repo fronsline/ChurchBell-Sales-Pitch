@@ -10,7 +10,7 @@
 
 > "I watched my own relatives — church treasurers — spend hours every Sunday after service, writing in multiple ledger books, cash books, day books, filling out receipt books by hand, and then stuffing receipts into subscription cards to send back to members. Every quarter, they'd spend days preparing reports for the PC Meeting. The annual report? Weeks of work.
 >
-> I'm a software engineer. God gave me this talent and I kept thinking — why can't we solve this? This became my dream from 2016. In 2020, during COVID, a church gave me the opportunity. I felt this was the calling. I built ChurchBell — not as a business, but as a service to the church."
+> I'm a software engineer. God gave me this talent and I kept thinking — why can't we solve this? This became my dream from 2016. In 2021, during COVID, a church gave me the opportunity. I felt this was the calling. I built ChurchBell — not as a business, but as a service to the church."
 
 **Then the growth line:**
 

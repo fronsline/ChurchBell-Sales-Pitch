@@ -3,16 +3,17 @@ import { HugeiconsIcon } from '@hugeicons/react';
 import {
   ChurchIcon, HierarchySquare01Icon, UserMultiple02Icon, Coins01Icon,
   Wallet01Icon, Briefcase01Icon, Target02Icon, JusticeScale01Icon, Building06Icon,
+  ConstructionIcon, Mail01Icon, Megaphone01Icon,
 } from '@hugeicons-pro/core-stroke-rounded';
 import { FadeUpText } from '../components/AnimatedText';
 
-// Fixed canvas — every element lives in this same px space so lines + nodes never desync
+// Fixed canvas: every element lives in this same px space so lines + nodes never desync
 const W = 860;
-const H = 486;
+const H = 440;
 const CX = W / 2;
-const CY = 232;
-const R = 196;
-const HUB = 184;
+const CY = 212;
+const R = 176;
+const HUB = 168;
 const PARISH = 64;
 
 const churches = [
@@ -33,6 +34,9 @@ const modules = [
   { label: 'Talent', icon: Target02Icon },
   { label: 'Legal', icon: JusticeScale01Icon },
   { label: 'Property', icon: Building06Icon },
+  { label: 'Construction', icon: ConstructionIcon },
+  { label: 'Mail Box', icon: Mail01Icon },
+  { label: 'Circulars', icon: Megaphone01Icon },
 ];
 
 export default function DioceseVision() {
@@ -45,8 +49,8 @@ export default function DioceseVision() {
       </FadeUpText>
       <FadeUpText delay={0.2}>
         <p style={{ marginBottom: 8, color: 'var(--text-muted)', maxWidth: 700 }}>
-          Every ChurchBell parish runs on one connected system. The Diocese app sits above them all, with
-          the whole network rolling up into a single, live view for the Bishop.
+          Every parish runs its own books on ChurchBell. The Diocese app sits above them all, and what each
+          church chooses to share rolls up into one live view for the Bishop and his officers.
         </p>
       </FadeUpText>
 
@@ -72,7 +76,7 @@ export default function DioceseVision() {
             );
           })}
 
-          {/* pulsing ripples — SVG circles keep a constant 2px stroke at any radius */}
+          {/* pulsing ripples: SVG circles keep a constant 2px stroke at any radius */}
           {[0, 1, 2].map((i) => (
             <motion.circle
               key={i}
@@ -84,7 +88,7 @@ export default function DioceseVision() {
           ))}
         </svg>
 
-        {/* parish nodes — outer div positions (centred), inner motion animates */}
+        {/* parish nodes: outer div positions (centred), inner motion animates */}
         {nodes.map((n, i) => (
           <div key={n.name} style={{ position: 'absolute', left: n.x, top: n.y, transform: 'translate(-50%, -50%)', zIndex: 2 }}>
             <motion.div
@@ -108,7 +112,7 @@ export default function DioceseVision() {
           </div>
         ))}
 
-        {/* central diocese hub — outer div centres it on (CX,CY); inner motion handles the entrance */}
+        {/* central diocese hub: outer div centres it on (CX,CY); inner motion handles the entrance */}
         <div style={{ position: 'absolute', left: CX, top: CY, transform: 'translate(-50%, -50%)', zIndex: 3 }}>
           <motion.div
             initial={{ scale: 0, rotate: -15 }}
@@ -130,11 +134,11 @@ export default function DioceseVision() {
 
       {/* module roll-up chips */}
       <FadeUpText delay={1.4}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap', justifyContent: 'center', marginTop: 14, maxWidth: 900 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'nowrap', justifyContent: 'center', marginTop: 10, maxWidth: 1280 }}>
           {modules.map((m) => (
             <div key={m.label} style={{
-              display: 'flex', alignItems: 'center', gap: 8,
-              padding: '7px 14px 7px 8px', background: 'white',
+              display: 'flex', alignItems: 'center', gap: 6,
+              padding: '6px 12px 6px 6px', background: 'white',
               border: '1px solid var(--line)', borderRadius: 100, boxShadow: 'var(--shadow-sm)',
             }}>
               <span style={{
@@ -143,7 +147,7 @@ export default function DioceseVision() {
               }}>
                 <HugeiconsIcon icon={m.icon} size={16} color="#7367F0" strokeWidth={1.7} />
               </span>
-              <span style={{ fontSize: '0.84rem', fontWeight: 600, color: 'var(--text-heading)' }}>{m.label}</span>
+              <span style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-heading)', whiteSpace: 'nowrap' }}>{m.label}</span>
             </div>
           ))}
         </div>

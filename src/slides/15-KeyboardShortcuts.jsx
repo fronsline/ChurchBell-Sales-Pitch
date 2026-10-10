@@ -27,18 +27,21 @@ function KbdCombo({ keys, label }) {
 const navigateShortcuts = [
   { keys: ['Alt', 'M'], label: 'Members' },
   { keys: ['Alt', 'T'], label: 'Receipts' },
-  { keys: ['Alt', 'D'], label: 'Dashboard' },
+  { keys: ['Alt', 'Y'], label: 'Payments' },
+  { keys: ['Alt', 'J'], label: 'Day Book' },
 ];
 
 const createShortcuts = [
   { keys: ['Alt', 'Shift', 'T'], label: 'New Receipt' },
   { keys: ['Alt', 'Shift', 'M'], label: 'New Member' },
   { keys: ['Alt', 'Shift', 'Y'], label: 'New Payment' },
+  { keys: ['Alt', 'N'], label: 'New, on this list' },
 ];
 
 const formShortcuts = [
   { keys: ['Ctrl', 'S'], label: 'Save' },
   { keys: ['Ctrl', 'Shift', 'S'], label: 'Save & Add New' },
+  { keys: ['Ctrl', 'Shift', 'M'], label: 'Add Next Month' },
   { keys: ['Ctrl', '⌫'], label: 'Back to List' },
 ];
 
@@ -50,7 +53,7 @@ export default function KeyboardShortcuts() {
 
       <FadeUpText>
         <h2 style={{ marginBottom: 4 }}>
-          Speed Matters — <span className="gradient-text">Keyboard Shortcuts</span>
+          Speed Matters: <span className="gradient-text">Keyboard Shortcuts</span>
         </h2>
       </FadeUpText>
       <FadeUpText delay={0.15}>
@@ -61,7 +64,7 @@ export default function KeyboardShortcuts() {
 
       <div style={{
         display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)',
-        gap: 24, width: '100%', maxWidth: 1000,
+        gap: 24, width: '100%', maxWidth: 1080,
       }}>
         {/* Navigate */}
         <StaggerContainer staggerDelay={0.12} delay={0.3}>
@@ -147,7 +150,15 @@ export default function KeyboardShortcuts() {
           <span className="kbd">/</span>
         </span>
         <span style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', fontWeight: 500 }}>
-          anytime to see all shortcuts
+          to see every shortcut, or
+        </span>
+        <span className="kbd-combo">
+          <span className="kbd">Ctrl</span>
+          <span className="kbd-plus">+</span>
+          <span className="kbd">K</span>
+        </span>
+        <span style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', fontWeight: 500 }}>
+          to jump to any screen by name
         </span>
       </motion.div>
     </div>

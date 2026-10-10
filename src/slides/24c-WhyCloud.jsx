@@ -13,12 +13,12 @@ const onPrem = [
 ];
 
 const cloud = [
-  'Backed up every day, with a copy kept in another city',
-  'Always-on, redundant infrastructure with 99.9% uptime',
-  'Bank-grade security, encrypted and patched for you',
+  'Backed up every night, with 30 days of copies kept safely in storage',
+  'Professionally run servers, watched by automatic health alarms day and night',
+  'Encrypted connections, and no office PC for anyone to tamper with',
   'No hardware to buy, just a small predictable monthly fee',
   'Reachable from any parish, any device, anytime',
-  'Scales itself instantly as the diocese grows',
+  'Grows with the diocese, with no new hardware to buy',
 ];
 
 function Card({ side, items }) {
@@ -47,7 +47,7 @@ function Card({ side, items }) {
             {isCloud ? 'ChurchBell on Cloud' : 'On-Premise Server'}
           </div>
           <div style={{ fontSize: '0.74rem', color: isCloud ? 'rgba(255,255,255,0.85)' : 'var(--text-muted)' }}>
-            {isCloud ? 'Managed for you on AWS' : 'A computer in the church office'}
+            {isCloud ? 'Managed for you on AWS, in Mumbai' : 'A computer in the church office'}
           </div>
         </div>
       </div>
@@ -116,7 +116,7 @@ export default function WhyCloud() {
         </div>
         <p style={{ fontSize: '0.95rem', color: 'var(--text-heading)', margin: 0, textAlign: 'left', lineHeight: 1.55 }}>
           On-premise is locking your records in a cupboard at the office. The cloud is a{' '}
-          <strong style={{ color: 'var(--primary)' }}>bank vault</strong>: safer, always open, and professionally guarded around the clock.
+          <strong style={{ color: 'var(--primary)' }}>bank vault</strong>: safer, always open, and watched around the clock.
         </p>
       </motion.div>
     </div>

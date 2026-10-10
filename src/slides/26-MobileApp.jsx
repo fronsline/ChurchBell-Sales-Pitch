@@ -1,18 +1,36 @@
 import { motion } from 'framer-motion';
 import { HugeiconsIcon } from '@hugeicons/react';
 import {
-  SmartPhone01Icon, ReceiptIndianRupeeIcon, UserGroupIcon,
-  BirthdayCakeIcon, ChartBarIncreasingIcon, BellDotIcon,
+  UserIcon, DashboardSquare01Icon, ChurchIcon,
 } from '@hugeicons-pro/core-stroke-rounded';
 import { FadeUpText, StaggerContainer, StaggerItem } from '../components/AnimatedText';
 
-const highlights = [
-  { icon: ReceiptIndianRupeeIcon, title: 'Transactions', desc: 'Create receipts & payments on the go' },
-  { icon: UserGroupIcon, title: 'Members', desc: 'View, search, and manage members' },
-  { icon: BirthdayCakeIcon, title: 'Special Dates', desc: 'Today\'s birthdays & anniversaries' },
-  { icon: ChartBarIncreasingIcon, title: 'Dashboard', desc: 'Financial summary at a glance' },
-  { icon: BellDotIcon, title: 'Notifications', desc: 'Push alerts for events & updates' },
-  { icon: SmartPhone01Icon, title: 'Command Center', desc: 'Quick access to everything' },
+const views = [
+  {
+    icon: UserIcon,
+    title: 'Member App',
+    who: 'For every member',
+    items: [
+      'Dues, incl. auction pending', 'Receipts & payment history', 'Pay by UPI',
+      'Daily verse', 'Notice board', 'Events & RSVP',
+      'Follow the order of service', 'Songs & Bible offline', 'Request profile changes',
+    ],
+  },
+  {
+    icon: DashboardSquare01Icon,
+    title: 'Admin App',
+    who: 'For pastors, treasurers & secretaries',
+    items: [
+      'Receipts on the go', 'Members & families', 'Approve edit requests',
+      'House visits', 'Reports', 'Pin your own shortcuts',
+    ],
+  },
+  {
+    icon: ChurchIcon,
+    title: 'Diocese App',
+    who: 'For diocese officers',
+    items: ['Assessment', 'Churches & directory', 'Finance reports', 'Mail & property work'],
+  },
 ];
 
 export default function MobileApp() {
@@ -20,16 +38,16 @@ export default function MobileApp() {
     <div className="slide-center">
       <FadeUpText delay={0.1}>
         <h2 style={{ marginBottom: 8 }}>
-          Church Management, <span className="gradient-text">In Your Palm</span>
+          The Church, <span className="gradient-text">In Every Pocket</span>
         </h2>
       </FadeUpText>
       <FadeUpText delay={0.2}>
-        <p style={{ marginBottom: 44, color: 'var(--text-muted)', maxWidth: 500 }}>
-          Full admin access from your phone — manage your church from anywhere
+        <p style={{ marginBottom: 32, color: 'var(--text-muted)', maxWidth: 640 }}>
+          One app, three views. Each person sees what is meant for them. Signed in with a one-time code or a passkey.
         </p>
       </FadeUpText>
 
-      <div style={{ display: 'flex', gap: 56, maxWidth: 1000, width: '100%', alignItems: 'center', justifyContent: 'center' }}>
+      <div style={{ display: 'flex', gap: 48, maxWidth: 1080, width: '100%', alignItems: 'center', justifyContent: 'center' }}>
         {/* Left: Phone mockup with real screenshot */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -86,30 +104,31 @@ export default function MobileApp() {
           </div>
         </motion.div>
 
-        {/* Right: Feature highlights */}
+        {/* Right: three views */}
         <div style={{ flex: 1 }}>
-          <StaggerContainer delay={0.5} staggerDelay={0.1} style={{
-            display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)',
-            gap: 14,
-          }}>
-            {highlights.map((h) => (
-              <StaggerItem key={h.title}>
+          <StaggerContainer delay={0.5} staggerDelay={0.12} style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+            {views.map((v) => (
+              <StaggerItem key={v.title}>
                 <div style={{
-                  display: 'flex', alignItems: 'center', gap: 12,
-                  padding: '16px 18px',
+                  padding: '14px 18px', textAlign: 'left',
                   background: 'rgba(255,255,255,0.8)', backdropFilter: 'blur(20px)',
                   border: '1px solid var(--line)', borderRadius: 14,
                 }}>
-                  <div style={{
-                    width: 40, height: 40, borderRadius: 10, flexShrink: 0,
-                    background: 'var(--primary-bg)', display: 'flex',
-                    alignItems: 'center', justifyContent: 'center',
-                  }}>
-                    <HugeiconsIcon icon={h.icon} size={20} color="#7367F0" />
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 10 }}>
+                    <div style={{
+                      width: 36, height: 36, borderRadius: 10, flexShrink: 0,
+                      background: 'var(--primary-bg)', display: 'flex',
+                      alignItems: 'center', justifyContent: 'center',
+                    }}>
+                      <HugeiconsIcon icon={v.icon} size={20} color="#7367F0" />
+                    </div>
+                    <h3 style={{ fontSize: '0.95rem', margin: 0 }}>{v.title}</h3>
+                    <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>{v.who}</span>
                   </div>
-                  <div style={{ textAlign: 'left' }}>
-                    <h3 style={{ fontSize: '0.88rem', margin: 0, marginBottom: 2 }}>{h.title}</h3>
-                    <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)', margin: 0 }}>{h.desc}</p>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+                    {v.items.map((it) => (
+                      <span key={it} className="tag tag-primary" style={{ fontSize: '0.7rem', padding: '4px 10px' }}>{it}</span>
+                    ))}
                   </div>
                 </div>
               </StaggerItem>
@@ -121,13 +140,13 @@ export default function MobileApp() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.3 }}
             style={{
-              marginTop: 20, padding: '12px 18px',
+              marginTop: 14, padding: '10px 18px',
               background: 'var(--primary-bg)', borderRadius: 10,
               fontSize: '0.82rem', color: 'var(--primary)', fontWeight: 500,
               textAlign: 'center',
             }}
           >
-            Available on iOS & Android
+            On the App Store & Google Play: search “ChurchBell”
           </motion.div>
         </div>
       </div>

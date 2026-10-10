@@ -7,12 +7,12 @@ import { FadeUpText, StaggerContainer, StaggerItem } from '../components/Animate
 import GlassCard from '../components/GlassCard';
 
 const features = [
-  'Automated voter eligibility for church elections',
-  'Custom rules — membership, subscription, baptism, confirmation, regularity',
-  'Clone ready-made diocese templates, then fine-tune',
-  'One-click "Why?" — see exactly why a member is ineligible',
-  'Filter All / Eligible / Ineligible; search instantly',
-  'Export a 3-sheet Excel — voters, reasons & the rules used',
+  'Automatic voter eligibility for church elections',
+  'Your rules: membership type, baptism, confirmation, minimum subscription, regular payment, no auction dues, declaration on time',
+  'Start from a diocese template (Madras, Trichy-Tanjore, Vellore, Erode-Salem), then fine-tune',
+  'One tap on "Why?" shows exactly why a member is not eligible',
+  'Filter All / Eligible / Not eligible; search instantly',
+  'Excel export: eligible voters, the reasons, and the rules used',
 ];
 
 const roll = [
@@ -29,12 +29,12 @@ export default function VoterList() {
       <div className="slide-left">
         <FadeUpText delay={0.1}>
           <h2 style={{ marginBottom: 8 }}>
-            Voter List — <span className="gradient-text">Fair, Transparent Elections</span>
+            Voter List: <span className="gradient-text">Fair, Transparent Elections</span>
           </h2>
         </FadeUpText>
         <FadeUpText delay={0.2}>
           <p style={{ marginBottom: 24, color: 'var(--text-muted)', fontSize: '0.98rem' }}>
-            No more manually auditing registers before an election. Set the rules once — every member is evaluated in seconds.
+            No more manually auditing registers before an election. Set the rules once, and every member is evaluated in seconds.
           </p>
         </FadeUpText>
 
@@ -61,7 +61,7 @@ export default function VoterList() {
               <HugeiconsIcon icon={CheckmarkBadge01Icon} size={18} color="white" strokeWidth={1.5} /> Voter List
             </span>
             <span className="tag" style={{ background: 'rgba(255,255,255,0.2)', color: 'white', fontSize: '0.65rem' }}>
-              Diocese Strict
+              Madras Diocese
             </span>
           </div>
 
@@ -69,7 +69,7 @@ export default function VoterList() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', borderBottom: '1px solid var(--line)' }}>
             {[
               { label: 'Eligible', value: 186, color: 'var(--success)' },
-              { label: 'Ineligible', value: 62, color: 'var(--alert)' },
+              { label: 'Not eligible', value: 62, color: 'var(--alert)' },
               { label: 'Total', value: 248, color: 'var(--text-heading)' },
             ].map((s) => (
               <div key={s.label} style={{ padding: '12px 0', textAlign: 'center', borderRight: '1px solid var(--line)' }}>

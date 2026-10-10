@@ -14,13 +14,13 @@ const features = [
   {
     icon: <HugeiconsIcon icon={ConnectIcon} size={28} color="#7367F0" />,
     title: 'Auto-Calculate Next Month',
-    description: 'Closing balances automatically become the next month\'s opening',
+    description: 'Each month\'s closing becomes the next month\'s opening, or fill several months at once',
     color: '#7367F0',
   },
   {
     icon: <HugeiconsIcon icon={Analytics01Icon} size={28} color="#7367F0" />,
     title: 'Cascading Recalculation',
-    description: 'Edit any past month — all future months recalculate instantly',
+    description: 'Fix a past month and ChurchBell shows, then updates, the months after it',
     color: '#7367F0',
   },
   {
