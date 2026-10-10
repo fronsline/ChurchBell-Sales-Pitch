@@ -38,8 +38,11 @@ export default function Hero() {
       </h1>
 
       <FadeUpText delay={2.2}>
-        <p style={{ fontSize: '1.3rem', color: 'var(--text-secondary)', maxWidth: 600, position: 'relative', zIndex: 1 }}>
-          A comprehensive, cloud-based church management system
+        <p style={{ fontSize: '1.45rem', fontWeight: 600, color: 'var(--text-heading)', maxWidth: 680, position: 'relative', zIndex: 1, marginBottom: 10 }}>
+          The Complete <span className="gradient-text">Church</span>. In One App.
+        </p>
+        <p style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', maxWidth: 680, position: 'relative', zIndex: 1 }}>
+          Built for Indian churches · Since 2022 · 30+ churches
         </p>
       </FadeUpText>
     </div>

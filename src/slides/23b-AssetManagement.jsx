@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { HugeiconsIcon } from '@hugeicons/react';
 import {
   Building01Icon, DocumentAttachmentIcon, Shield01Icon,
@@ -8,27 +7,27 @@ import { FadeUpText, StaggerContainer, StaggerItem } from '../components/Animate
 import GlassCard from '../components/GlassCard';
 
 const features = [
-  { icon: Building01Icon, title: 'Asset Register', desc: 'Track every church property — name, cost, location, condition, and status' },
-  { icon: DocumentAttachmentIcon, title: 'Documents', desc: 'Upload invoices, warranty cards, and insurance documents per asset' },
-  { icon: Shield01Icon, title: 'Warranty Tracking', desc: 'Track warranty periods, log claims, and monitor resolutions' },
-  { icon: ChartBarIncreasingIcon, title: 'Depreciation', desc: 'Auto-calculated book value with straight-line depreciation' },
-  { icon: FileExportIcon, title: 'Reports & Export', desc: 'Asset register, service history, and maintenance cost reports' },
-  { icon: Settings01Icon, title: 'Service Records', desc: 'Log maintenance — preventive, breakdown, inspection, and parts replaced' },
+  { icon: Building01Icon, title: 'Asset Register', desc: 'Every item the church owns: cost, location, condition, status and full history' },
+  { icon: DocumentAttachmentIcon, title: 'Bills & Warranty Cards', desc: 'Keep the purchase bill and warranty card with each asset, always findable' },
+  { icon: Shield01Icon, title: 'Warranty Tracking', desc: 'Know when each warranty ends; log every claim until it is fixed' },
+  { icon: ChartBarIncreasingIcon, title: 'Depreciation', desc: 'Today’s book value worked out for you (straight-line)' },
+  { icon: FileExportIcon, title: 'Asset Summary & Reports', desc: 'Totals by status, condition and category; register, service history and maintenance cost in Excel' },
+  { icon: Settings01Icon, title: 'Service Records', desc: 'Log preventive, breakdown, inspection and part-replacement work. See when the next service is due' },
 ];
 
-const statuses = ['In Use', 'In Storage', 'Under Repair', 'Disposed', 'Donated'];
+const statuses = ['In Use', 'In Storage', 'Under Repair', 'Disposed', 'Donated', 'Lost'];
 
 export default function AssetManagement() {
   return (
     <div className="slide-center">
       <FadeUpText delay={0.1}>
         <h2 style={{ marginBottom: 8 }}>
-          Asset Management — <span className="gradient-text">Track Every Property</span>
+          Asset Management: <span className="gradient-text">Track Every Asset</span>
         </h2>
       </FadeUpText>
       <FadeUpText delay={0.2}>
         <p style={{ marginBottom: 40, color: 'var(--text-muted)', maxWidth: 600 }}>
-          From purchase to disposal — complete lifecycle tracking for every church asset
+          Chairs, sound system, organ, vehicles: from purchase to disposal, every item accounted for
         </p>
       </FadeUpText>
 

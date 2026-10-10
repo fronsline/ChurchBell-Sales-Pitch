@@ -1,19 +1,14 @@
 import { motion } from 'framer-motion';
 import { HugeiconsIcon } from '@hugeicons/react';
 import {
-  ChartIncreaseIcon, Calculator01Icon, ReceiptIndianRupeeIcon,
+  ChartIncreaseIcon, Calculator01Icon,
   WhatsappIcon, CheckListIcon, Money01Icon,
 } from '@hugeicons-pro/core-stroke-rounded';
 import { FadeUpText, StaggerContainer, StaggerItem } from '../components/AnimatedText';
 
 // A 500-member parish, per year. Illustrative estimates.
 const savings = [
-  {
-    icon: ReceiptIndianRupeeIcon,
-    title: 'Fewer defaulters, better collection',
-    sub: 'Auto statements & defaulter lists recover subscriptions that used to slip through',
-    amount: 'XXXXX',
-  },
+
   {
     icon: Calculator01Icon,
     title: 'Accounting & audit time',

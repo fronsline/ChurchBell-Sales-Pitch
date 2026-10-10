@@ -1,16 +1,17 @@
 import { motion } from 'framer-motion';
 import { HugeiconsIcon } from '@hugeicons/react';
 import {
-  ChurchIcon, BookOpen01Icon, Coins01Icon, Building06Icon, JusticeScale01Icon,
+  ChurchIcon, BookOpen01Icon, Coins01Icon, Building06Icon, JusticeScale01Icon, UserLock01Icon,
 } from '@hugeicons-pro/core-stroke-rounded';
 import { FadeUpText } from '../components/AnimatedText';
 
 const steps = [
-  { icon: ChurchIcon, title: 'Import the church list', desc: 'Every affiliated parish, onboarded in one pass', tag: 'Required' },
-  { icon: BookOpen01Icon, title: 'Load the standard ledger chart', desc: 'The diocese\'s curated income and expense codes, so every church reconciles the same way', tag: 'Required' },
-  { icon: Coins01Icon, title: 'Import assessment history', desc: 'The last 3 financial years, enough to power the 5-year comparison going forward', tag: 'Required' },
-  { icon: Building06Icon, title: 'Organisations and employees', desc: 'Schools, colleges and institutions with their staff', tag: 'Optional' },
-  { icon: JusticeScale01Icon, title: 'Legal cases on record', desc: 'Open court cases and notices, with their next dates', tag: 'Optional' },
+  { icon: BookOpen01Icon, title: 'Set the standard ledger chart', desc: 'Start from a ready-made chart or your own; every church gets the same income and expense codes', tag: 'Required' },
+  { icon: ChurchIcon, title: 'Onboard each church', desc: 'One form sets up the church, its ledgers, cash and bank, a bill book and its first admin', tag: 'Required' },
+  { icon: Coins01Icon, title: 'Import assessment history', desc: 'Past years and arrears from Excel, so every church\'s balance is right from day one', tag: 'Required' },
+  { icon: UserLock01Icon, title: 'Give officers access', desc: 'Each officer sees only the screens their work needs, on the web and the phone', tag: 'Required' },
+  { icon: Building06Icon, title: 'Institutions and staff', desc: 'Schools, colleges and offices, with their staff imported from Excel', tag: 'Optional' },
+  { icon: JusticeScale01Icon, title: 'Legal cases and property', desc: 'Open court cases with their next dates, and the land and buildings register', tag: 'Optional' },
 ];
 
 export default function OnboardingDiocese() {
@@ -22,9 +23,9 @@ export default function OnboardingDiocese() {
         </h2>
       </FadeUpText>
       <FadeUpText delay={0.2}>
-        <p style={{ marginBottom: 36, color: 'var(--text-muted)', maxWidth: 620 }}>
-          A one-time setup, and we do the heavy lifting with you. Three essentials get you live, and
-          two more enrich the picture whenever you're ready.
+        <p style={{ marginBottom: 28, color: 'var(--text-muted)', maxWidth: 620 }}>
+          A one-time setup, and we do the heavy lifting with you. Four essentials get you live, and
+          two more enrich the picture whenever you&rsquo;re ready.
         </p>
       </FadeUpText>
 
@@ -40,7 +41,7 @@ export default function OnboardingDiocese() {
           }}
         />
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
           {steps.map((s, i) => {
             const optional = s.tag === 'Optional';
             return (
@@ -65,7 +66,7 @@ export default function OnboardingDiocese() {
                 {/* card */}
                 <div style={{
                   flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16,
-                  padding: '14px 20px', background: 'rgba(255,255,255,0.85)', backdropFilter: 'blur(20px)',
+                  padding: '12px 20px', background: 'rgba(255,255,255,0.85)', backdropFilter: 'blur(20px)',
                   border: '1px solid var(--line)', borderRadius: 'var(--radius)', textAlign: 'left',
                 }}>
                   <div>

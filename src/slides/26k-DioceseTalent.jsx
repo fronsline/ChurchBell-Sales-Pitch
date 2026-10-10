@@ -5,16 +5,17 @@ import { FadeUpText, StaggerContainer, StaggerItem } from '../components/Animate
 import GlassCard from '../components/GlassCard';
 
 const features = [
-  'A standing candidate pool with qualifications, documents and availability',
-  'Job postings tied to the vacancies Workforce projects',
-  'Application pipeline: Applied, Shortlist, Interview, Offer, Hired',
-  'Smart-Match radar that ranks the best-fit candidates for each posting',
-  'Hire in one click, and it becomes a staff record in Workforce',
+  'A standing candidate pool with qualifications, skills, experience and documents',
+  'Bring candidates in from Excel, with duplicates caught on the way',
+  'Job postings for each institution, with the qualification and experience they need',
+  'Application pipeline: Applied, Shortlisted, Interview, Offer, Hired, every move recorded',
+  'Smart-Match ranks candidates for a posting on qualification, experience, skills and location',
+  'Mark the hire against the posting, and the candidate leaves the open pool',
 ];
 
 const pipeline = [
   { stage: 'Applied', count: 24, color: '#7367F0' },
-  { stage: 'Shortlist', count: 11, color: '#7367F0' },
+  { stage: 'Shortlisted', count: 11, color: '#7367F0' },
   { stage: 'Interview', count: 6, color: '#F79C39' },
   { stage: 'Offer', count: 2, color: '#28C76F' },
   { stage: 'Hired', count: 1, color: '#28C76F' },
@@ -37,8 +38,8 @@ export default function DioceseTalent() {
         </FadeUpText>
         <FadeUpText delay={0.2}>
           <p style={{ marginBottom: 24, color: 'var(--text-muted)', fontSize: '0.98rem' }}>
-            When Workforce flags a retirement, Talent fills it with a vetted candidate bench, open postings,
-            and a smart-match radar that ranks the right people for each role.
+            When Workforce shows a retirement coming, Talent helps you fill it: a ready bench of candidates,
+            open postings, and a smart-match score that puts the best-fit people first.
           </p>
         </FadeUpText>
 

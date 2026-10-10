@@ -8,10 +8,10 @@ import { FadeUpText, StaggerContainer, StaggerItem } from '../components/Animate
 import GlassCard from '../components/GlassCard';
 
 const features = [
-  { icon: UserGroupIcon, title: 'Committees & Roles', desc: 'PC, fellowships, finance — with Chairman, Secretary, Treasurer roles' },
-  { icon: Calendar01Icon, title: 'Meeting Management', desc: 'Agenda, attendance, quorum — all tracked per meeting' },
+  { icon: UserGroupIcon, title: 'Committees & Roles', desc: 'Pastorate committee, fellowships, building, finance, with Chairman, Secretary, Treasurer roles' },
+  { icon: Calendar01Icon, title: 'Meeting Management', desc: 'Agenda, attendance and quorum, all tracked per meeting' },
   { icon: CheckListIcon, title: 'Action Items', desc: 'Assign tasks, set due dates, auto carry-forward to next meeting' },
-  { icon: LegalDocument01Icon, title: 'Resolutions', desc: 'Auto-numbered decisions — Unanimous, Majority, or With Dissent' },
+  { icon: LegalDocument01Icon, title: 'Resolutions', desc: 'Auto-numbered decisions: Unanimous, Majority, or With Dissent' },
 ];
 
 export default function Committee() {
@@ -19,7 +19,7 @@ export default function Committee() {
     <div className="slide-center">
       <FadeUpText delay={0.1}>
         <h2 style={{ marginBottom: 48 }}>
-          Committee — <span className="gradient-text">From Agenda to Resolution</span>
+          Committee: <span className="gradient-text">From Agenda to Resolution</span>
         </h2>
       </FadeUpText>
 
@@ -44,7 +44,7 @@ export default function Committee() {
           borderRadius: 12, fontSize: '0.85rem', color: 'var(--primary)', fontWeight: 500,
         }}>
           <HugeiconsIcon icon={FileExportIcon} size={18} color="#7367F0" />
-          Generate Meeting Minutes, Agenda Letter, and Annual Report as PDF — one click
+          Agenda letter, meeting brief, minutes and annual report as PDF in one click
         </div>
       </FadeUpText>
     </div>

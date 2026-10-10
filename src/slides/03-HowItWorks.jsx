@@ -1,6 +1,6 @@
 import { HugeiconsIcon } from '@hugeicons/react';
 import {
-  Book01Icon, Notebook01Icon, BookOpen01Icon, ReceiptIndianRupeeIcon,
+  Book01Icon, Notebook01Icon, BirthdayCakeIcon, ReceiptIndianRupeeIcon,
   ChartBarIncreasingIcon, UserGroupIcon, PresentationBarChart01Icon,
   Audit01Icon,
 } from '@hugeicons-pro/core-stroke-rounded';
@@ -8,13 +8,13 @@ import { FadeUpText, StaggerContainer, StaggerItem } from '../components/Animate
 
 const steps = [
   { icon: UserGroupIcon, label: 'Member Lists' },
-  { icon: ChartBarIncreasingIcon, label: 'Manual Reports' },
-  { icon: PresentationBarChart01Icon, label: 'PC Meeting Reports' },
-  { icon: Audit01Icon, label: 'Yearly Audit' },
-  { icon: Book01Icon, label: 'Cash Book' },
   { icon: Notebook01Icon, label: 'Ledger Book' },
-  { icon: BookOpen01Icon, label: 'Day Book' },
   { icon: ReceiptIndianRupeeIcon, label: 'Receipt Book' },
+  { icon: Book01Icon, label: 'Cash Book' },
+  { icon: Audit01Icon, label: 'Yearly Audit' },
+  { icon: ChartBarIncreasingIcon, label: 'Manual Reports' },
+  { icon: BirthdayCakeIcon, label: 'Special Date Preparation' },
+  { icon: PresentationBarChart01Icon, label: 'PC Meeting Reports' },
 ];
 
 export default function HowItWorks() {

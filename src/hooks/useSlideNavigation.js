@@ -1,7 +1,11 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 
 export function useSlideNavigation(totalSlides) {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  // ?slide=N opens the deck at slide N (1-based), handy for rehearsing one section.
+  const [currentSlide, setCurrentSlide] = useState(() => {
+    const n = parseInt(new URLSearchParams(window.location.search).get('slide'), 10);
+    return n >= 1 && n <= totalSlides ? n - 1 : 0;
+  });
   const [direction, setDirection] = useState(0);
   const [showNotes, setShowNotes] = useState(false);
   const [showOverview, setShowOverview] = useState(false);
@@ -54,7 +58,7 @@ export function useSlideNavigation(totalSlides) {
     numberBufferRef.current = newBuffer;
     setNumberBuffer(newBuffer);
 
-    // Set timer — navigate after 800ms of no more digits
+    // Set timer: navigate after 800ms of no more digits
     numberTimerRef.current = setTimeout(() => {
       const slideNum = parseInt(newBuffer, 10);
       if (slideNum >= 1 && slideNum <= totalSlides) {

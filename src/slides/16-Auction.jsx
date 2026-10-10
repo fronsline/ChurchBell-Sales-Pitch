@@ -5,17 +5,17 @@ import { HugeiconsIcon } from '@hugeicons/react';
 import { LegalHammerIcon } from '@hugeicons-pro/core-stroke-rounded';
 
 const flowSteps = [
-  { num: '1', text: 'Create auction event (Harvest Festival)' },
-  { num: '2', text: 'Add items with amounts' },
-  { num: '3', text: 'Assign to members' },
-  { num: '4', text: 'Track payments — full, partial, pending' },
-  { num: '5', text: 'View pending amounts across all events' },
+  { num: '1', text: 'Create the auction event (Harvest Festival)' },
+  { num: '2', text: 'Record each item, who won it and the amount' },
+  { num: '3', text: 'Collect at the receipt screen, in full or in parts' },
+  { num: '4', text: 'See what is pending by event or by member' },
+  { num: '5', text: 'Members see their own auction dues in the app' },
 ];
 
 const auctionItems = [
-  { name: 'Rice Bag', amount: 'Rs. 5,000', status: 'Paid', tagClass: 'tag-success' },
-  { name: 'Flowers', amount: 'Rs. 2,000', status: 'Pending', tagClass: 'tag-alert' },
-  { name: 'Cake', amount: 'Rs. 3,000', status: 'Partial', tagClass: 'tag-primary' },
+  { name: 'Rice Bag', member: 'Thomas K.', amount: '₹5,000', status: 'Paid', tagClass: 'tag-success' },
+  { name: 'Flowers', member: 'Mary Joseph', amount: '₹2,000', status: 'Pending', tagClass: 'tag-alert' },
+  { name: 'Cake', member: 'Samuel P.', amount: '₹3,000', status: 'Partial', tagClass: 'tag-primary' },
 ];
 
 export default function Auction() {
@@ -31,7 +31,7 @@ export default function Auction() {
       </FadeUpText>
       <FadeUpText delay={0.15}>
         <p style={{ marginBottom: 40, color: 'var(--text-muted)' }}>
-          Track every bid, every payment
+          Track every bid, every payment, every pending rupee
         </p>
       </FadeUpText>
 
@@ -61,6 +61,11 @@ export default function Auction() {
               </StaggerItem>
             ))}
           </StaggerContainer>
+          <FadeUpText delay={1.2}>
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginTop: 12, paddingLeft: 16, textAlign: 'left' }}>
+              Starting out? Bring in last year's unpaid bids from an Excel sheet in one go.
+            </p>
+          </FadeUpText>
         </div>
 
         {/* Right: Mockup card */}
@@ -103,8 +108,11 @@ export default function Auction() {
                       padding: '14px 0',
                       borderBottom: i < auctionItems.length - 1 ? '1px solid var(--line)' : 'none',
                     }}>
-                      <span style={{ fontWeight: 500, color: 'var(--text-heading)', fontSize: '0.9rem' }}>
-                        {item.name}
+                      <span style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
+                        <span style={{ fontWeight: 500, color: 'var(--text-heading)', fontSize: '0.9rem' }}>
+                          {item.name}
+                        </span>
+                        <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>{item.member}</span>
                       </span>
                       <span style={{ fontWeight: 600, color: 'var(--text)', fontSize: '0.9rem', textAlign: 'center', minWidth: 80 }}>
                         {item.amount}
@@ -130,7 +138,7 @@ export default function Auction() {
                   Total
                 </span>
                 <span style={{ fontWeight: 700, color: 'var(--primary)', fontSize: '1.1rem' }}>
-                  Rs. 10,000
+                  ₹10,000
                 </span>
               </motion.div>
             </div>

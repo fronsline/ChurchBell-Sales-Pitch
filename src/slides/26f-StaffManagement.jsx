@@ -5,22 +5,21 @@ import { FadeUpText, StaggerContainer, StaggerItem } from '../components/Animate
 import GlassCard from '../components/GlassCard';
 
 const features = [
-  'Complete staff records across schools, colleges & institutions',
-  'Organised by department / org unit across the diocese',
-  'Qualifications, salary and allowances and service history, one file per person',
-  'Retirement-driven vacancy projection, automatically',
-  'Plan recruitment ahead and hand each gap to Talent Acquisition',
+  'Every institution in one place: schools, colleges, hospitals, homes and offices',
+  'Organised by department, with an organisation chart for the diocese',
+  'One file per person: qualifications, documents and service history',
+  'Salary and allowances with a dated pay history; pay, bank and ID details seen only by HR',
+  'An onboarding checklist for each new joiner, and Excel import for existing staff',
+  'Upcoming retirements, with reminders 90 and 30 days ahead',
 ];
 
 const projection = [
-  { year: '2026', count: 4 },
-  { year: '2027', count: 7 },
-  { year: '2028', count: 5 },
-  { year: '2029', count: 9 },
-  { year: '2030', count: 6 },
+  { year: 'Next 6 months', count: 3 },
+  { year: '6 to 12 months', count: 5 },
+  { year: '12 to 24 months', count: 8 },
 ];
 
-const maxCount = 9;
+const maxCount = 8;
 
 export default function StaffManagement() {
   return (
@@ -34,7 +33,7 @@ export default function StaffManagement() {
         <FadeUpText delay={0.2}>
           <p style={{ marginBottom: 24, color: 'var(--text-muted)', fontSize: '0.98rem' }}>
             Every teacher and staff member across diocesan institutions, with their qualifications, documents
-            and service. Then ChurchBell projects who retires when, so appointments are planned, not panicked.
+            and service. ChurchBell shows who retires when, so appointments are planned, not panicked.
           </p>
         </FadeUpText>
 
@@ -54,10 +53,10 @@ export default function StaffManagement() {
         <GlassCard delay={0.5} style={{ width: '100%', maxWidth: 430, padding: '24px 26px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 4 }}>
             <HugeiconsIcon icon={ChartIncreaseIcon} size={22} color="var(--primary)" strokeWidth={1.6} />
-            <span style={{ fontWeight: 700, fontSize: '1rem', color: 'var(--text-heading)' }}>Vacancy Projection</span>
+            <span style={{ fontWeight: 700, fontSize: '1rem', color: 'var(--text-heading)' }}>Retirement Timeline</span>
           </div>
           <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', margin: '0 0 22px' }}>
-            Upcoming retirements, year by year
+            Who retires in the next two years
           </p>
 
           {/* Bar chart */}
@@ -69,7 +68,7 @@ export default function StaffManagement() {
                   initial={{ height: 0 }}
                   animate={{ height: `${(p.count / maxCount) * 100}%` }}
                   transition={{ duration: 0.8, delay: 0.8 + i * 0.12, ease: 'easeOut' }}
-                  style={{ width: '100%', maxWidth: 34, background: 'var(--gradient-primary)', borderRadius: '8px 8px 0 0', minHeight: 8 }}
+                  style={{ width: '100%', maxWidth: 60, background: 'var(--gradient-primary)', borderRadius: '8px 8px 0 0', minHeight: 8 }}
                 />
                 <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 600 }}>{p.year}</span>
               </div>
@@ -79,7 +78,7 @@ export default function StaffManagement() {
           <div style={{ marginTop: 20, padding: '12px 16px', background: 'var(--primary-bg)', borderRadius: 'var(--radius-sm)', display: 'flex', alignItems: 'center', gap: 10 }}>
             <HugeiconsIcon icon={Briefcase01Icon} size={20} color="var(--primary)" strokeWidth={1.6} />
             <span style={{ fontSize: '0.8rem', color: 'var(--text-heading)', fontWeight: 600 }}>
-              31 vacancies forecast over 5 years, start hiring early
+              16 retirements in the next 24 months: start hiring early
             </span>
           </div>
         </GlassCard>

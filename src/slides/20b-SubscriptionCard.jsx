@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { HugeiconsIcon } from '@hugeicons/react';
-import { Wallet01Icon, FileExportIcon, UserGroupIcon } from '@hugeicons-pro/core-stroke-rounded';
+import { Wallet01Icon, FileExportIcon, UserGroupIcon, SmartPhone01Icon } from '@hugeicons-pro/core-stroke-rounded';
 import { FadeUpText } from '../components/AnimatedText';
 import GlassCard from '../components/GlassCard';
 
@@ -21,12 +21,12 @@ export default function SubscriptionCard() {
     <div className="slide-center">
       <FadeUpText delay={0.1}>
         <h2 style={{ marginBottom: 8 }}>
-          Subscription Card — <span className="gradient-text">Member Payment Passbook</span>
+          Subscription Card: <span className="gradient-text">Member Payment Passbook</span>
         </h2>
       </FadeUpText>
       <FadeUpText delay={0.2}>
         <p style={{ marginBottom: 36, color: 'var(--text-muted)', maxWidth: 650 }}>
-          A complete year-at-a-glance view of every member's payments — like a bank passbook for the church
+          A year-at-a-glance view of every member's payments, filled in by each receipt, like a bank passbook for the church
         </p>
       </FadeUpText>
 
@@ -74,7 +74,7 @@ export default function SubscriptionCard() {
                   }}>
                     Ledger
                   </th>
-                  {months.map((m, i) => (
+                  {months.map((m) => (
                     <th key={m} style={{
                       padding: '10px 8px', fontWeight: 600, color: 'var(--text-heading)',
                       borderBottom: '1px solid var(--line)', minWidth: 58,
@@ -161,11 +161,12 @@ export default function SubscriptionCard() {
 
       {/* Bottom features */}
       <FadeUpText delay={1.0}>
-        <div style={{ display: 'flex', gap: 32, marginTop: 32 }}>
+        <div style={{ display: 'flex', gap: 24, marginTop: 32, flexWrap: 'wrap', justifyContent: 'center', maxWidth: 1050 }}>
           {[
             { icon: UserGroupIcon, text: 'Individual & Family card modes' },
             { icon: FileExportIcon, text: 'Export to PDF & Excel' },
-            { icon: Wallet01Icon, text: 'Multi-year view — select multiple financial years' },
+            { icon: Wallet01Icon, text: 'Several financial years side by side' },
+            { icon: SmartPhone01Icon, text: 'Members see their own card in the app' },
           ].map((f) => (
             <div key={f.text} style={{
               display: 'flex', alignItems: 'center', gap: 8,

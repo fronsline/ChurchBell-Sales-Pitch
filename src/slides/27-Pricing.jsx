@@ -26,7 +26,7 @@ export default function Pricing() {
               <span style={{ fontSize: '1.2rem', color: 'var(--text-muted)', fontWeight: 500 }}>Just</span>
             </div>
             <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'center', gap: 4, marginBottom: 8 }}>
-              <span style={{ fontSize: '1.4rem', color: 'var(--primary)', fontWeight: 600 }}>Rs.</span>
+              <span style={{ fontSize: '1.4rem', color: 'var(--primary)', fontWeight: 600 }}>₹</span>
               <span className="gradient-text" style={{ fontSize: '6rem', fontWeight: 800, lineHeight: 1 }}>
                 3
               </span>
@@ -58,10 +58,10 @@ export default function Pricing() {
                     {ex.members} members
                   </div>
                   <div style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--primary)' }}>
-                    Rs. {ex.cost.toLocaleString()}/mo
+                    ₹ {ex.cost.toLocaleString('en-IN')} / mo
                   </div>
                   <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', marginTop: 2 }}>
-                    ~ Rs. {ex.perDay}/day
+                    ~ ₹ {ex.perDay} / day
                   </div>
                 </motion.div>
               ))}
@@ -69,7 +69,7 @@ export default function Pricing() {
 
             {/* Benefits */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10, alignItems: 'flex-start', paddingLeft: 16 }}>
-              {['No initial setup cost', 'No hidden fees', 'No lock-in — cancel anytime', 'Pay only for active members'].map((tag, i) => (
+              {['No initial setup cost', 'No hidden fees', 'No lock-in, cancel anytime', 'Pay only for active members'].map((tag, i) => (
                 <motion.div
                   key={tag}
                   initial={{ opacity: 0, x: -10 }}
@@ -101,15 +101,15 @@ export default function Pricing() {
               What You <span className="gradient-text">Get</span>
             </h2>
             <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginBottom: 28 }}>
-              Everything included — no add-ons, no tiers
+              Everything included. No add-ons, no tiers
             </p>
           </div>
 
           {/* Value cards */}
           {[
-            { icon: UserGroupIcon, title: 'Unlimited Admin Users', desc: 'Add as many admins and staff as you need — no per-seat charges' },
-            { icon: WhatsappIcon, title: 'WhatsApp & SMS', desc: 'Automated receipts, wishes, and notifications — just 50 paise per message' },
-            { icon: SmartPhone01Icon, title: 'Admin Mobile App', desc: 'Full admin access on the go — transactions, members, reports from your phone' },
+            { icon: UserGroupIcon, title: 'Unlimited Admin Users', desc: 'Add as many admins and staff as you need. No per-seat charges.' },
+            { icon: WhatsappIcon, title: 'WhatsApp & SMS', desc: 'Automated receipts, wishes and notifications, 50 paise per message' },
+            { icon: SmartPhone01Icon, title: 'Admin & Member Apps', desc: 'Full admin access on the go + member app for every parishioner' },
           ].map((item, i) => (
             <motion.div
               key={item.title}
@@ -149,7 +149,7 @@ export default function Pricing() {
               fontStyle: 'italic',
             }}
           >
-            Zero ads. Zero campaigns. Every church joined through word of mouth.
+            Trusted by a growing family of churches across India.
           </motion.div>
         </motion.div>
       </div>

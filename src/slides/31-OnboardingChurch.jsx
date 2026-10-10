@@ -7,7 +7,7 @@ const steps = [
   {
     icon: UserMultiple02Icon,
     title: 'Import the member list',
-    desc: 'Hand us your existing register in our simple Excel template, with families, contacts, groups and all.',
+    desc: 'Hand us your existing register in Excel, in whatever layout you keep it. We map it and bring in families, contacts and all.',
   },
   {
     icon: Invoice01Icon,
@@ -16,8 +16,8 @@ const steps = [
   },
   {
     icon: Calendar03Icon,
-    title: 'Prefill from 1 April 2026',
-    desc: 'Back-fill the current financial year so the church opens with a complete, balanced book from day one.',
+    title: 'Back-fill from 1 April',
+    desc: 'Enter opening balances and this financial year\'s entries, so the church opens with complete, balanced books.',
   },
 ];
 
@@ -100,7 +100,7 @@ export default function OnboardingChurch() {
       >
         <HugeiconsIcon icon={Tick01Icon} size={22} color="var(--success)" strokeWidth={2} />
         <span style={{ fontSize: '0.92rem', fontWeight: 600, color: 'var(--text-heading)' }}>
-          Go live with the current year already in the books, with no blank start.
+          Go live with this year already in the books and the diocese&rsquo;s standard ledgers in place.
         </span>
       </motion.div>
     </div>

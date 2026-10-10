@@ -65,7 +65,7 @@ export default function ThePain() {
           }}
         >
           <p style={{ color: 'var(--primary)', fontStyle: 'italic', fontSize: '1.05rem' }}>
-            "And when a member walks up and asks about their payment history — finding, cross-checking, and consolidating it across multiple books takes hours of effort."
+            "And when a member walks up and asks about their payment history, finding, cross-checking, and consolidating it across multiple books takes hours of effort."
           </p>
         </div>
       </FadeUpText>

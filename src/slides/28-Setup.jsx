@@ -1,13 +1,14 @@
 import { motion } from 'framer-motion';
 import { HugeiconsIcon } from '@hugeicons/react';
-import { Settings01Icon, FileExportIcon, UserGroupIcon, Tick01Icon, WhatsappIcon } from '@hugeicons-pro/core-stroke-rounded';
+import { Settings01Icon, FileExportIcon, UserGroupIcon, WhatsappIcon } from '@hugeicons-pro/core-stroke-rounded';
 import { FadeUpText } from '../components/AnimatedText';
 
+// Milestones mirror ChurchBell-Website/lib/content.ts `setup` (website + brochure).
 const steps = [
-  { icon: Settings01Icon, title: 'Setup', time: '< 1 hour', desc: 'Church account configured' },
-  { icon: FileExportIcon, title: 'Import', time: '1–2 days', desc: 'Your Excel, your format' },
-  { icon: UserGroupIcon, title: 'Train', time: '1 session', desc: 'In-person or online' },
-  { icon: Tick01Icon, title: 'Go Live', time: 'Immediately', desc: 'Start using right away' },
+  { icon: Settings01Icon, title: 'Account Ready', time: 'Hour 1', desc: 'Logo, receipt format and preferences set' },
+  { icon: FileExportIcon, title: 'Members Imported', time: 'Day 1 – 2', desc: 'From any Excel format. We do the heavy lifting' },
+  { icon: WhatsappIcon, title: 'First WhatsApp Receipt', time: 'Day 3', desc: 'Your members start seeing the magic' },
+  { icon: UserGroupIcon, title: 'Free Trial, Full Access', time: 'Month 1 & 2', desc: 'Full training included' },
 ];
 
 export default function Setup() {
@@ -15,12 +16,12 @@ export default function Setup() {
     <div className="slide-center">
       <FadeUpText delay={0.1}>
         <h2 style={{ marginBottom: 8 }}>
-          Get Started <span className="gradient-text">in a Day</span>
+          Up and Running <span className="gradient-text">in a Day</span>
         </h2>
       </FadeUpText>
       <FadeUpText delay={0.2}>
         <p style={{ marginBottom: 48, color: 'var(--text-muted)', maxWidth: 500 }}>
-          Quick setup, no friction — you'll be running before the week ends
+          In-person or online training included. We&apos;re a WhatsApp message away.
         </p>
       </FadeUpText>
 
@@ -56,7 +57,7 @@ export default function Setup() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 + i * 0.25 }}
-              style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: 160 }}
+              style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: 200 }}
             >
               {/* Circle */}
               <motion.div
@@ -122,9 +123,9 @@ export default function Setup() {
             2
           </div>
           <div>
-            <div style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--text-heading)', lineHeight: 1.3 }}>Months Free Trial</div>
+            <div style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--text-heading)', lineHeight: 1.3 }}>Months Free</div>
             <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', margin: '4px 0 0' }}>
-              Get comfortable before you commit
+              Free setup. No lock-in, ever. If it doesn&apos;t change how your church runs, walk away.
             </p>
           </div>
         </motion.div>

@@ -5,11 +5,12 @@ import { FadeUpText, StaggerContainer, StaggerItem } from '../components/Animate
 import GlassCard from '../components/GlassCard';
 
 const features = [
-  'One directory across every affiliated parish, not 40 separate lists',
-  'Search and filter by parish, area, age band, family or group',
-  'A member dashboard with totals and demographics at a glance',
-  'Drill from diocese to parish to an individual member profile',
-  'Always current, rolling up live from each church\'s own books',
+  'One directory across the parishes that share, not 40 separate lists',
+  'Members appear only from churches that have agreed to share them',
+  'Filter by church, membership type, gender, family head or subscription payer',
+  'A member dashboard: totals, families, age bands, gender and church-wise counts',
+  'Open any member to see the family and, where the church shares finance, their giving',
+  'Always current, because it reads each church\'s own register live',
 ];
 
 const rows = [
@@ -30,8 +31,8 @@ export default function DioceseMembers() {
         </FadeUpText>
         <FadeUpText delay={0.2}>
           <p style={{ marginBottom: 24, color: 'var(--text-muted)', fontSize: '0.98rem' }}>
-            Every member of every parish, consolidated into a single living directory. It is searchable,
-            segmentable, and never out of date.
+            Every member of every sharing parish in one living directory. Searchable, easy to filter,
+            and never out of date. Sharing is each church's choice.
           </p>
         </FadeUpText>
 
